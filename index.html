@@ -4,160 +4,193 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Xelle · Plateforme Venture Builder · Prototype</title>
+<title>xELLE · Plateforme du parcours · Prototype</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Exo+2:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <style>
 :root{
-  --blue:#0074C8; --blue-d:#005A9C; --blue-dd:#0B2F55; --blue-l:#E6F1FA; --blue-ll:#F0F6FF;
-  --yellow:#FFE80A; --pink:#F2295B; --orange:#FE4C1C; --ink:#1A1B1E; --ink2:#44464D; --ink3:#6B6F78;
-  --line:#E3E7EE; --soft:#F5F7FA; --green:#14915A; --green-l:#E3F5EC; --amber:#B86E00; --amber-l:#FFF3D6; --red:#D62445; --red-l:#FDE7EC;
-  --om:#FF7900;
+  --xb:#3974BC; --xb-d:#1F4FA0; --navy:#17305E; --xb-l:#E8F0FA; --xb-ll:#F3F7FC;
+  --gold:#F5B82E; --gold-d:#E08A12; --gold-l:#FFF4DA;
+  --paper:#F8F7F4; --ink:#16213A; --ink2:#46506A; --ink3:#6F7891; --line:#E4E6EC; --soft:#F3F4F7;
+  --green:#14915A; --green-l:#E3F5EC; --amber:#B86E00; --amber-l:#FFF3D6; --red:#D62445; --red-l:#FDE7EC;
+  --om:#FF7900; --sv:#0074C8; --sv-y:#FFE80A;
+  --mf:#2F8F46;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{font-family:Roboto,system-ui,sans-serif;color:var(--ink);background:#EEF2F7;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,.exo{font-family:"Exo 2",Roboto,sans-serif}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(23,48,94,.035) 1px,transparent 1px);background-size:5px 5px}
+h1,h2,h3,h4,.nu{font-family:Nunito,Inter,sans-serif}
 button{font:inherit;cursor:pointer}
 .i{width:18px;height:18px;stroke-width:2;flex-shrink:0}
 .i-s{width:15px;height:15px}
 .i-xs{width:13px;height:13px}
 
 /* presentation chrome */
-.deck-top{position:sticky;top:0;z-index:50;background:var(--blue-dd);color:#fff;display:flex;align-items:center;gap:18px;padding:10px 24px}
-.deck-top .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.deck-top .brand img{height:30px}
-.deck-top .brand span{font-family:"Exo 2";font-weight:700;font-size:15px;white-space:nowrap}
-.deck-top nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
-.deck-top nav a{color:#CFE3F5;text-decoration:none;font-size:13px;font-weight:500;padding:7px 10px;border-radius:999px;display:flex;gap:7px;align-items:center;white-space:nowrap}
-.deck-top nav a b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.14);font-size:11px}
-.deck-top nav a.on{background:#fff;color:var(--blue-dd)}
-.deck-top nav a.on b{background:var(--yellow);color:var(--ink)}
-.lang{display:flex;background:rgba(255,255,255,.12);border-radius:999px;padding:3px}
-.lang button{border:0;background:none;color:#CFE3F5;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
-.lang button.on{background:var(--yellow);color:var(--ink)}
-.screen{display:none;padding:28px 24px 40px;max-width:1500px;margin:0 auto}
+.deck{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:8px 22px}
+.deck .lg{display:flex;align-items:center;gap:12px}
+.deck .lg img.x{height:30px}
+.deck .lg .by{font-size:11px;color:var(--ink3);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.svb{display:inline-flex;align-items:center;background:var(--sv);border-radius:8px;padding:0 4px}
+.svb img{height:40px}
+.deck nav{display:flex;gap:3px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto}
+.deck nav a{color:var(--ink2);text-decoration:none;font-size:12px;font-weight:600;padding:6px 7px;border-radius:999px;display:flex;gap:6px;align-items:center;white-space:nowrap}
+.deck nav a b{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--soft);font-size:10.5px}
+.deck nav a.on{background:var(--xb);color:#fff}
+.deck nav a.on b{background:var(--gold);color:var(--ink)}
+.lang{display:flex;background:var(--soft);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;color:var(--ink3);font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px}
+.lang button.on{background:var(--xb);color:#fff}
+.fictb{background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:4px 8px;border-radius:6px;white-space:nowrap}
+.screen{display:none;padding:26px 24px 44px;max-width:1520px;margin:0 auto}
 .screen.on{display:block}
-.s-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:20px}
-.s-head h2{margin:0;font-size:28px;font-weight:800;color:var(--blue-dd)}
-.s-head p{margin:6px 0 0;color:var(--ink2);font-size:15px;max-width:760px}
-.s-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--yellow);font-family:"Exo 2";font-weight:800;margin-right:10px;vertical-align:middle;font-size:17px}
+.s-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px}
+.s-head h2{margin:0;font-size:29px;font-weight:900;color:var(--xb)}
+.s-head p{margin:6px 0 0;color:var(--ink2);font-size:15px;max-width:800px;line-height:1.45}
+.s-num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;font-weight:900;margin-right:10px;vertical-align:middle;font-size:17px}
 .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .tag{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink2);white-space:nowrap}
-.fictb{background:var(--pink);color:#fff;font-size:11px;font-weight:700;padding:5px 9px;border-radius:6px;white-space:nowrap}
-.fict{position:fixed;bottom:12px;left:12px;z-index:60;background:var(--ink);color:#fff;font-size:11px;font-weight:700;padding:6px 10px;border-radius:8px;letter-spacing:.02em}
-.eu{display:flex;align-items:center;gap:8px;font-size:11px;color:#CFE3F5;white-space:nowrap}
-.eu i.flag{display:inline-block;width:26px;height:18px;background:#003399;border-radius:2px;position:relative}
-.eu i.flag:after{content:"★";position:absolute;inset:0;display:grid;place-items:center;color:#FFCC00;font-size:9px;letter-spacing:-1px;font-style:normal}
+.foot{display:flex;align-items:center;gap:14px;justify-content:center;padding:14px;color:var(--ink3);font-size:12px;flex-wrap:wrap}
+.eu{display:inline-flex;align-items:center;gap:8px}
+.flag{display:inline-block;width:30px;height:20px;background:#003399;border-radius:2px;position:relative}
+.flag:after{content:"★ ★ ★";position:absolute;inset:0;display:grid;place-items:center;color:#FFCC00;font-size:6px;letter-spacing:-.5px}
 
-/* desktop app frame */
-.stage{display:flex;gap:28px;align-items:flex-start;justify-content:center}
-.app{flex:1;min-width:0;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(11,47,85,.12);overflow:hidden;border:1px solid var(--line)}
-.app-top{display:flex;align-items:center;gap:14px;background:var(--blue);color:#fff;padding:10px 18px;height:56px}
-.app-top img{height:28px}
-.app-top .prog{font-family:"Exo 2";font-weight:700;font-size:15px;padding-left:14px;border-left:1px solid rgba(255,255,255,.3)}
-.app-top .sp{flex:1}
-.app-top .who{display:flex;align-items:center;gap:9px;font-size:13px}
+/* app frame */
+.stage{display:flex;gap:26px;align-items:flex-start;justify-content:center}
+.app{flex:1;min-width:0;background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(23,48,94,.10);overflow:hidden;border:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;background:#fff;border-bottom:1px solid var(--line);padding:0 18px;height:60px}
+.bar img.x{height:26px}
+.bar .tabs{display:flex;gap:2px;margin-left:10px;height:100%}
+.bar .tabs a{display:flex;align-items:center;gap:7px;padding:0 12px;font-size:13.5px;font-weight:600;color:var(--ink3);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.bar .tabs a.on{color:var(--xb);border-bottom-color:var(--xb)}
+.bar .sp{flex:1}
+.stage .app .who>span:first-child{display:none}
+.bar .who{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink2);white-space:nowrap}
 .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:12px;color:#fff;flex-shrink:0}
-.app-body{display:flex;min-height:640px}
-.side{width:212px;background:var(--soft);border-right:1px solid var(--line);padding:16px 10px;flex-shrink:0}
-.side a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;margin-bottom:2px}
-.side a.on{background:#fff;color:var(--blue);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.side .grp{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;padding:14px 12px 6px}
-.main{flex:1;min-width:0;padding:22px 26px}
-.crumb{font-size:13px;color:var(--ink3);margin-bottom:6px}
-.main h3{margin:0 0 4px;font-size:22px;font-weight:700}
+.main{padding:22px 26px}
+.crumb{font-size:13px;color:var(--ink3);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.main h3{margin:0 0 4px;font-size:23px;font-weight:900;color:var(--navy)}
 .sub{color:var(--ink3);font-size:14px;margin:0}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.ct{font-family:Nunito;font-weight:800;font-size:16px;color:var(--navy)}
 .row{display:flex;gap:16px}
+.col{display:flex;flex-direction:column;gap:14px}
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;white-space:nowrap}
 .p-green{background:var(--green-l);color:var(--green)}
 .p-amber{background:var(--amber-l);color:var(--amber)}
 .p-red{background:var(--red-l);color:var(--red)}
-.p-blue{background:var(--blue-l);color:var(--blue-d)}
+.p-blue{background:var(--xb-l);color:var(--xb-d)}
+.p-gold{background:var(--gold-l);color:#9A5B00}
 .p-grey{background:var(--soft);color:var(--ink3)}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;font-weight:700;font-size:14px;padding:10px 16px;white-space:nowrap}
-.btn-p{background:var(--blue);color:#fff}
-.btn-y{background:var(--yellow);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;font-weight:700;font-size:14px;padding:10px 16px;white-space:nowrap;text-decoration:none}
+.btn-p{background:var(--xb);color:#fff}
+.btn-g{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff}
 .btn-o{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.btn-r{background:#fff;color:var(--red);border:1px solid #F5B8C5}
 .ai{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#6A3FD6;background:#F0EAFF;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.aicard{border-color:#DCD0FF;background:#FBF9FF}
 .muted{color:var(--ink3)}
-.small{font-size:12px}
+.small{font-size:12.5px}
+.tbl{overflow-x:auto}
+table.g{width:100%;border-collapse:collapse;font-size:13.5px}
+table.g th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);text-align:left;font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.g td{padding:10px;border-bottom:1px solid var(--line)}
+table.g td.n{text-align:center;font-weight:800;font-family:Nunito}
+table.g tr.blk td{background:#FFF6F8}
+table.g tr.sel td{background:var(--xb-ll)}
 
-/* phone frame */
-.phone{width:360px;flex-shrink:0;background:#0F1115;border-radius:44px;padding:11px;box-shadow:0 20px 50px rgba(11,47,85,.25)}
-.phone .scr{background:#fff;border-radius:34px;overflow:hidden;height:760px;display:flex;flex-direction:column;position:relative}
-.ph-status{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:12px;font-weight:700;color:#fff;background:var(--blue)}
-.ph-bar{background:var(--blue);color:#fff;padding:6px 16px 12px;display:flex;align-items:center;gap:10px}
-.ph-bar img{height:22px}
-.ph-bar .t{font-family:"Exo 2";font-weight:700;font-size:16px;flex:1;min-width:0}
-.ph-body{flex:1;overflow:hidden;padding:14px;background:var(--blue-ll);position:relative}
+/* logos of companies */
+.co-logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;color:#fff;font-family:Nunito;font-weight:900;font-size:15px}
+.mf{background:var(--mf)}
+.mfl{display:flex;align-items:center;gap:10px}
+.mfl svg{flex-shrink:0}
+.co{display:flex;align-items:center;gap:10px;min-width:0}
+.co b{font-family:Nunito;font-weight:800;font-size:14px;display:block;color:var(--navy)}
+
+/* phone */
+.phone{width:360px;flex-shrink:0;background:#11131A;border-radius:44px;padding:11px;box-shadow:0 20px 50px rgba(23,48,94,.22)}
+.phone .scr{background:var(--paper);border-radius:34px;overflow:hidden;height:760px;display:flex;flex-direction:column;position:relative}
+.ph-status{height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:12px;font-weight:700;color:var(--ink);background:#fff}
+.ph-bar{background:#fff;padding:6px 16px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+.ph-bar img.x{height:20px}
+.ph-bar .t{font-family:Nunito;font-weight:800;font-size:16px;flex:1;min-width:0;color:var(--navy)}
+.ph-bar a{color:var(--ink)}
+.ph-body{flex:1;overflow:hidden;padding:14px;position:relative}
 .ph-tabs{display:flex;border-top:1px solid var(--line);background:#fff;padding:6px 6px 14px}
 .ph-tabs a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--ink3);text-decoration:none;font-weight:600;padding-top:6px}
-.ph-tabs a.on{color:var(--blue)}
+.ph-tabs a.on{color:var(--xb)}
 .ph-label{text-align:center;font-size:13px;color:var(--ink3);margin-top:12px;font-weight:500}
+.vcard{background:#fff;border-radius:14px;padding:12px;margin-top:10px;border:1px solid var(--line);box-shadow:0 2px 8px rgba(23,48,94,.05)}
 
-/* screen 1: flight path */
-.route{position:relative;background:linear-gradient(180deg,#F7FBFF 0%,#EAF3FB 100%);border-radius:16px;border:1px solid var(--line);padding:22px 20px 18px;overflow:hidden}
-.route svg.path{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-.stops{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:start}
-.stop{text-align:center;position:relative}
-.dot{width:54px;height:54px;margin:0 auto;border-radius:50%;display:grid;place-items:center;font-family:"Exo 2";font-weight:800;font-size:18px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.12)}
-.dot.done{background:var(--blue);color:#fff}
-.dot.now{background:var(--yellow);color:var(--ink);box-shadow:0 0 0 6px rgba(255,232,10,.35),0 3px 10px rgba(0,0,0,.12)}
-.dot.next{background:#fff;color:var(--ink3);border-color:#C9D3E0;border-style:dashed}
-.dot.jal{border-radius:16px;transform:rotate(45deg)}
-.dot.jal>*{transform:rotate(-45deg)}
-.stop .nm{font-family:"Exo 2";font-weight:700;font-size:14px;margin-top:12px}
-.stop .dt{font-size:12px;color:var(--ink3);margin-top:2px}
-.stop .unl{margin-top:8px}
-.lanes{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}
-.lane{display:flex;flex-direction:column;gap:5px;align-items:stretch}
-.out{font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 7px;display:flex;align-items:center;gap:5px;text-align:left;line-height:1.25}
+/* ===== route (screen 1) ===== */
+.route{background:linear-gradient(180deg,#FBFCFE,#F1F5FB);border:1px solid var(--line);border-radius:16px;padding:46px 18px 16px;position:relative}
+.track{display:flex;align-items:flex-start}
+.big{width:80px;flex-shrink:0;text-align:center;position:relative;z-index:2}
+.bd{width:52px;height:52px;margin:0 auto;border-radius:50%;display:grid;place-items:center;font-family:Nunito;font-weight:900;font-size:17px;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.bd.done{background:var(--xb);color:#fff}
+.bd.now{background:var(--gold);color:var(--ink)}
+.bd.next{background:#fff;color:var(--ink3);border:3px dashed #B9C6DA}
+.bd.jal{border-radius:14px;transform:rotate(45deg);width:46px;height:46px;margin-top:3px}
+.bd.jal>*{transform:rotate(-45deg)}
+.big .nm{font-family:Nunito;font-weight:800;font-size:13.5px;margin-top:10px;color:var(--navy);line-height:1.15}
+.big .dt{font-size:11.5px;color:var(--ink3);margin-top:2px}
+.big .un{margin-top:6px}
+.big .un .pill{font-size:10.5px;padding:3px 7px}
+.leg{flex:1;position:relative;height:52px;min-width:64px}
+.leg .ground{position:absolute;left:0;right:0;top:25px;border-top:3px solid var(--xb)}
+.leg.fut .ground{border-top:3px dashed #B9C6DA}
+.leg .hop{position:absolute;left:-26px;right:-26px;top:-40px;height:60px;width:calc(100% + 52px);overflow:visible;pointer-events:none}
+.leg .hop path{fill:none;stroke:var(--xb);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.leg.fut .hop path{stroke:#AFC0D8;stroke-dasharray:5 6}
+.leg .hop path.hd{stroke-dasharray:none}
+.leg .tasks{position:absolute;left:4px;right:4px;top:16px;display:flex;justify-content:space-around;align-items:center}
+.tk{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:8px;font-weight:800;background:#fff;border:2px solid var(--xb);color:var(--xb);position:relative}
+.tk.ok{background:var(--xb);color:#fff}
+.tk.rv{background:var(--gold);border-color:var(--gold-d);color:var(--ink)}
+.tk.fu{border:2px dashed #B9C6DA;color:var(--ink3)}
+.leg .lbl{position:absolute;left:0;right:0;top:56px;text-align:center;font-size:11.5px;font-weight:700;color:var(--ink2)}
+.plane{position:absolute;z-index:5;color:#fff;background:var(--navy);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.plane svg{width:18px;height:18px}
+.detour{position:absolute;left:10%;right:10%;top:104px;border:2px dashed var(--gold-d);border-top:0;border-radius:0 0 40px 40px;height:34px}
+.detour span{position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);background:var(--gold-l);color:#9A5B00;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap;border:1px solid #F3D08A}
+.lanes{display:flex;gap:0;margin-top:50px;border-top:1px solid var(--line);padding-top:12px}
+.lane{flex:1;min-width:0;padding:0 6px;display:flex;flex-direction:column;gap:5px}
+.lane h5{margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3)}
+.out{font-size:11.5px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 7px;display:flex;align-items:center;gap:5px;line-height:1.25}
 .out.ok{border-color:#BFE6D1}
 .out.ok .i{color:var(--green)}
 .out.wait{border-style:dashed;color:var(--ink3)}
-.merge{display:flex;gap:16px;margin-top:16px;align-items:stretch}
-.final{flex:1;border-radius:14px;background:var(--blue-dd);color:#fff;padding:16px 18px;display:flex;gap:16px;align-items:center}
-.final .stack{display:flex;gap:-10px}
-.final .stack span{width:44px;height:56px;border-radius:6px;background:#fff;margin-left:-18px;box-shadow:-3px 3px 8px rgba(0,0,0,.25);display:grid;place-items:center;color:var(--blue-dd)}
-.final .stack span:first-child{margin-left:0}
-.final h4{margin:0;font-size:17px}
-.final p{margin:3px 0 0;font-size:13px;color:#CFE3F5}
-.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
-.bar>i{display:block;height:100%;background:var(--blue);border-radius:99px}
+.fuse{display:flex;align-items:center;gap:14px;margin-top:14px;border-radius:14px;background:var(--navy);color:#fff;padding:14px 18px}
+.fuse .src{display:flex;gap:6px;flex-wrap:wrap}
+.fuse .src span{background:rgba(255,255,255,.12);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.fuse .eq{font-family:Nunito;font-weight:900;font-size:22px;color:var(--gold)}
+.fuse .res{display:flex;align-items:center;gap:10px;background:#fff;color:var(--navy);border-radius:12px;padding:8px 12px;font-family:Nunito;font-weight:800;font-size:14px;white-space:nowrap}
+.eng{display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.eng .lv{flex:1;white-space:nowrap;border-radius:8px;padding:7px 8px;font-size:11.5px;font-weight:700;text-align:center;background:var(--soft);color:var(--ink3)}
+.eng .lv.on{background:var(--green-l);color:var(--green);outline:2px solid var(--green)}
 
-
-.hop{position:absolute;left:50%;top:-14px;width:calc(100% + 8px);height:46px;overflow:visible;z-index:1}
-.hop path{fill:none;stroke:#0074C8;stroke-width:3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
-.hop.next path{stroke:#9FB3C8;stroke-dasharray:6 6}
-.hop path.hd{stroke-dasharray:none}
-.stop .dot{position:relative;z-index:2}
-.plane{position:absolute;z-index:3;left:calc(50% + 34px);top:-22px;color:var(--blue-dd);background:#fff;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.18);transform:rotate(0deg)}
-.plane svg{width:20px;height:20px}
-.route{padding-top:34px}
 /* vertical route (phone) */
-.vroute{position:relative;padding-left:4px}
-.vstop{display:flex;gap:12px;position:relative;padding-bottom:16px}
-.vstop:before{content:"";position:absolute;left:19px;top:40px;bottom:-2px;border-left:3px dashed #B9C9DB}
-.vstop.done:before{border-left:3px solid var(--blue)}
+.vstop{display:flex;gap:11px;position:relative;padding-bottom:11px}
+.vstop:before{content:"";position:absolute;left:17px;top:36px;bottom:0;border-left:3px dashed #B9C6DA}
+.vstop.done:before{border-left:3px solid var(--xb)}
 .vstop:last-child:before{display:none}
-.vdot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:"Exo 2";font-weight:800;font-size:15px;flex-shrink:0;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.12)}
-.vtxt{flex:1;min-width:0;padding-top:2px}
-.vtxt b{font-family:"Exo 2";font-size:15px;display:block}
+.vdot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:Nunito;font-weight:900;font-size:13px;flex-shrink:0;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.vtxt{flex:1;min-width:0;padding-top:1px}
+.vtxt>b{font-family:Nunito;font-size:14.5px;display:block;color:var(--navy)}
 .vtxt>span{font-size:12px;color:var(--ink3)}
-.vcard{background:#fff;border-radius:14px;padding:12px;margin-top:8px;border:1px solid var(--line);box-shadow:0 2px 8px rgba(11,47,85,.06)}
+.mini{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
+.mini i{width:16px;height:16px;border-radius:50%;background:var(--xb);display:block}
+.mini i.r{background:var(--gold)}
+.mini i.f{background:#fff;border:2px dashed #B9C6DA}
 
-/* chat (screen 2) */
+/* chat */
 .msg{max-width:88%;padding:10px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;margin-bottom:8px}
 .msg.a{background:#fff;border:1px solid var(--line);border-top-left-radius:4px}
-.msg.u{background:var(--blue);color:#fff;margin-left:auto;border-top-right-radius:4px}
+.msg.u{background:var(--xb);color:#fff;margin-left:auto;border-top-right-radius:4px}
 .who-ai{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#6A3FD6;margin-bottom:4px}
 .voice{display:flex;align-items:center;gap:8px}
-.voice .wave{display:flex;gap:2px;align-items:center;height:20px}
-.voice .wave i{width:3px;background:#fff;border-radius:2px;opacity:.85}
+.wave{display:flex;gap:2px;align-items:center;height:20px}
+.wave i{width:3px;background:#fff;border-radius:2px;opacity:.85}
 .att{display:flex;gap:8px;margin:4px 0 8px auto;justify-content:flex-end}
 .thumb{width:112px;border-radius:12px;overflow:hidden;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15);background:#fff}
 .thumb .ph{height:92px;overflow:hidden}
@@ -171,49 +204,44 @@ button{font:inherit;cursor:pointer}
 .composer .f{flex:1;background:var(--soft);border-radius:999px;padding:9px 12px;font-size:13px;color:var(--ink3)}
 .cbtn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:0}
 .steps{display:flex;gap:4px;margin:2px 0 10px}
-.steps i{flex:1;height:5px;border-radius:9px;background:#C9D9EE}
-.steps i.on{background:var(--blue)}
+.steps i{flex:1;height:5px;border-radius:9px;background:#D3DDEC}
+.steps i.on{background:var(--xb)}
 .chip{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:600;color:var(--ink2)}
+.field{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px;margin-top:6px}
+.field small{display:block;color:var(--ink3);font-size:11px;font-weight:600;margin-bottom:2px}
 
-/* screen 3 */
+/* proof */
 .crit{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
 .crit:last-child{border-bottom:0}
 .crit .ic{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
-.cite{margin-top:6px;font-size:12px;background:var(--soft);border-left:3px solid var(--blue);padding:6px 8px;border-radius:4px;color:var(--ink2)}
-.cite b{color:var(--ink)}
-.status5{display:flex;gap:0;margin:14px 0 4px}
+.cite{margin-top:6px;font-size:12px;background:var(--soft);border-left:3px solid var(--xb);padding:6px 8px;border-radius:4px;color:var(--ink2)}
+.status5{display:flex;margin:14px 0 4px}
 .status5 div{flex:1;text-align:center;font-size:12px;font-weight:600;color:var(--ink3);position:relative;padding-top:24px}
 .status5 div:before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;background:var(--line)}
 .status5 div:after{content:"";position:absolute;top:2px;left:50%;margin-left:-8px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--line)}
-.status5 div.d{color:var(--blue-d)}
-.status5 div.d:before,.status5 div.d:after{background:var(--blue);border-color:var(--blue)}
+.status5 div.d{color:var(--xb-d)}
+.status5 div.d:before,.status5 div.d:after{background:var(--xb);border-color:var(--xb)}
 .status5 div.c{color:var(--amber)}
-.status5 div.c:before{background:linear-gradient(90deg,var(--blue) 50%,var(--line) 50%)}
-.status5 div.c:after{background:var(--yellow);border-color:var(--amber);width:20px;height:20px;margin-left:-10px;top:0}
+.status5 div.c:before{background:linear-gradient(90deg,var(--xb) 50%,var(--line) 50%)}
+.status5 div.c:after{background:var(--gold);border-color:var(--gold-d);width:20px;height:20px;margin-left:-10px;top:0}
 .doc{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
 .hl{position:absolute;border:2.5px solid var(--green);border-radius:6px;background:rgba(20,145,90,.08)}
 .hl.w{border-color:var(--amber);background:rgba(184,110,0,.08)}
-.hl span{position:absolute;top:-11px;left:-2px;background:var(--green);color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 5px;font-family:Roboto}
+.hl span{position:absolute;top:-11px;left:-2px;background:var(--green);color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 5px;font-family:Inter}
 .hl.w span{background:var(--amber)}
-.dec{display:flex;gap:8px;flex-wrap:wrap}
-textarea.mot{width:100%;border:1.5px solid var(--blue);border-radius:10px;padding:10px;font:inherit;font-size:13.5px;resize:none;height:84px;color:var(--ink)}
+textarea.mot{width:100%;border:1.5px solid var(--xb);border-radius:10px;padding:10px;font:inherit;font-size:13.5px;resize:none;height:80px;color:var(--ink)}
 
-/* screen 4 */
-table.g{width:100%;border-collapse:collapse;font-size:13.5px}
-table.g th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3);text-align:left;font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line)}
-table.g td{padding:10px;border-bottom:1px solid var(--line)}
-table.g td.n{text-align:center;font-weight:700;font-family:"Exo 2"}
-table.g tr.blk td{background:#FFF6F8}
-.score{font-family:"Exo 2";font-weight:800;font-size:44px;line-height:1;color:var(--blue-dd)}
+/* milestone */
+.score{font-family:Nunito;font-weight:900;font-size:46px;line-height:1;color:var(--navy)}
 .gauge{height:12px;border-radius:99px;background:var(--line);position:relative;margin:10px 0 4px}
-.gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--orange),var(--yellow))}
+.gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--gold-d),var(--gold))}
 .gauge b{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink)}
-.tr{display:flex;gap:6px;align-items:center}
-.tr .seg{flex:1;height:34px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:700}
+.flow{display:flex;gap:6px;align-items:center}
+.flow .seg{flex:1;height:36px;border-radius:9px;display:grid;place-items:center;font-size:12.5px;font-weight:700;text-align:center;padding:0 4px}
 
-/* screen 5 */
-.kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
-.kpi .v{font-family:"Exo 2";font-weight:800;font-size:26px;margin-top:4px}
+/* kpis */
+.kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.kpi .v{font-family:Nunito;font-weight:900;font-size:26px;margin-top:4px;color:var(--navy)}
 .kpi .l{font-size:12.5px;color:var(--ink3);font-weight:600}
 .kpi.alert{border:2px solid var(--red);background:#FFF8F9}
 .chart{display:flex;align-items:flex-end;gap:14px;height:130px;padding:8px 6px 0;border-bottom:1px solid var(--line)}
@@ -222,187 +250,334 @@ table.g tr.blk td{background:#FFF6F8}
 .chart .c .bb i{width:22px;border-radius:5px 5px 0 0}
 .chart .c span{font-size:11.5px;color:var(--ink3);font-weight:600}
 .pf{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.pf .co{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px}
-.pf .co.sel{border:2px solid var(--blue);box-shadow:0 4px 14px rgba(0,116,200,.15)}
-.pf .co b{font-family:"Exo 2";font-size:14px;display:block}
+.pf .cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px}
+.pf .cc.sel{border:2px solid var(--xb);box-shadow:0 4px 14px rgba(57,116,188,.15)}
 .dotc{width:9px;height:9px;border-radius:50%;display:inline-block}
+.prog{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog>i{display:block;height:100%;background:var(--xb);border-radius:99px}
+.prog.g>i{background:linear-gradient(90deg,var(--gold),var(--gold-d))}
 
-/* screen 6 */
+/* profile */
+.hero{display:flex;gap:18px;align-items:center;padding:18px;border-radius:16px;background:linear-gradient(120deg,#fff 0%,var(--xb-ll) 100%);border:1px solid var(--line)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;font-size:13px}
+.kv span{color:var(--ink3)}
+.kv b{font-weight:600}
+.dlist{display:flex;flex-direction:column}
+.dlist div{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.dlist div:last-child{border-bottom:0}
+.ex{display:flex;align-items:center;gap:8px;font-size:13px;padding:6px 0}
+
+/* trust */
 .sw{width:38px;height:22px;border-radius:99px;background:var(--green);position:relative;flex-shrink:0;border:0}
 .sw:after{content:"";position:absolute;right:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff}
 .sw.off{background:#C9D3E0}
 .sw.off:after{right:auto;left:3px}
-.prompt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#0F1A2A;color:#D6E4F5;border-radius:10px;padding:12px 14px;line-height:1.55;white-space:pre-wrap}
-.prompt em{color:var(--yellow);font-style:normal}
+.prompt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--navy);color:#D6E4F5;border-radius:10px;padding:12px 14px;line-height:1.55;white-space:pre-wrap}
+.prompt em{color:var(--gold);font-style:normal}
 .hbar{display:flex;align-items:center;gap:10px;margin:9px 0}
-.hbar .t{width:170px;font-size:13px;font-weight:600}
+.hbar .t2{width:180px;font-size:13px;font-weight:600}
 .hbar .b{flex:1;height:14px;background:var(--line);border-radius:99px;position:relative}
 .hbar .b i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--green)}
 .hbar .b s{position:absolute;top:-4px;bottom:-4px;left:80%;border-left:2px dashed var(--red)}
-.hbar .v{width:76px;text-align:right;font-family:"Exo 2";font-weight:700}
+.hbar .v{width:70px;text-align:right;font-family:Nunito;font-weight:800}
 
-/* modal */
-.modal{position:fixed;inset:0;background:rgba(15,26,42,.5);display:none;align-items:center;justify-content:center;z-index:80;padding:16px}
+/* modal + toast */
+.modal{position:fixed;inset:0;background:rgba(23,48,94,.5);display:none;align-items:center;justify-content:center;z-index:80;padding:16px}
 .modal.on{display:flex}
-.modal .box{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:22px}
-.modal h4{margin:0 0 6px;font-size:18px}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 16px;border-radius:12px;font-size:14px;z-index:90;display:none;align-items:center;gap:8px}
+.modal .box{background:#fff;border-radius:16px;max-width:460px;width:100%;padding:22px}
+.modal h4{margin:0 0 6px;font-size:18px;color:var(--navy)}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:11px 16px;border-radius:12px;font-size:14px;z-index:90;display:none;align-items:center;gap:8px;max-width:92vw}
 .toast.on{display:flex}
 
-@media (max-width:1100px){
+@media (max-width:1180px){
   .stage{flex-direction:column;align-items:center}
   .app{width:100%}
-  .side{display:none}
-  .deck-top{flex-wrap:wrap}
-  .deck-top nav{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap}
-  .eu{display:none}
+  .bar .tabs{display:none}
+  .deck .lg .by{display:none}
   .pf{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width:700px){
-  .app-top .who>span:first-child,.app-top .prog{display:none}
-  .tbl{overflow-x:auto}
-  .tr .seg{font-size:10.5px;height:40px;padding:0 4px;text-align:center}
-  .tr>.i{display:none}
-  .screen{padding:18px 16px 40px}
+@media (max-width:760px){
+  .deck{flex-wrap:wrap;padding:8px 14px}
+  .deck nav{margin-left:0;width:100%;order:3}
+  .screen{padding:18px 14px 40px}
   .s-head{flex-direction:column;align-items:flex-start}
+  .s-head h2{font-size:24px}
   .tags{justify-content:flex-start}
-  .stops,.lanes{grid-template-columns:repeat(7,150px);}
-  .route{overflow-x:auto}
   .row{flex-direction:column}
   .main{padding:16px}
   .phone{width:100%;max-width:360px}
-  .merge{flex-direction:column}
-  .final{flex-wrap:wrap}
-  .final>div[style]{flex:1 1 100%!important}
-  .merge .card{width:auto!important}
-  .hbar .t{width:110px}
+  .bar .who>span:first-child{display:none}
+  .route{overflow-x:auto;padding-left:10px}
+  .route>*{min-width:1100px}
+  .fuse{flex-wrap:wrap}
+  .fuse .res{white-space:normal}
+  .flow .seg{font-size:10.5px;height:42px}
+  .flow>.i{display:none}
+  .hbar .t2{width:110px}
+  .w300{width:auto!important}
+  .hero{flex-wrap:wrap}
 }
 </style>
 </head>
 <body>
 
-<header class="deck-top">
-  <div class="brand"><img src="logo-silikin.svg" alt="Silikin Village"><span>Xelle · Venture Builder</span></div>
+<!-- Mboka Farm logo (fictional) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mboka" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#2F8F46"/><path d="M16 44c0-14 9-24 26-26-1 15-9 26-26 26z" fill="#BDEB8A"/><path d="M16 44c8-7 14-12 22-18" stroke="#2F8F46" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="44" cy="44" r="7" fill="#FFB547"/></symbol>
+</svg>
+
+<header class="deck">
+  <div class="lg"><img class="x" src="logo-xelle.png" alt="xELLE"><span class="by"><span data-en="run by">opéré par</span><span class="svb"><img src="logo-silikin.svg" alt="Silikin Village"></span></span></div>
   <nav id="nav">
     <a href="#1" data-s="1"><b>1</b><span data-en="Journey">Parcours</span></a>
-    <a href="#2" data-s="2"><b>2</b><span data-en="Diagnostic">Diagnostic</span></a>
-    <a href="#3" data-s="3"><b>3</b><span data-en="Proof check">Preuves</span></a>
-    <a href="#4" data-s="4"><b>4</b><span data-en="Milestone 1">Jalon 1</span></a>
-    <a href="#5" data-s="5"><b>5</b><span data-en="Dashboard">Tableau de bord</span></a>
-    <a href="#6" data-s="6"><b>6</b><span data-en="Trust">Confiance</span></a>
+    <a href="#2" data-s="2"><b>2</b><span data-en="Call">Candidatures</span></a>
+    <a href="#3" data-s="3"><b>3</b><span data-en="Company">Entreprise</span></a>
+    <a href="#4" data-s="4"><b>4</b><span data-en="Diagnostic">Diagnostic</span></a>
+    <a href="#5" data-s="5"><b>5</b><span data-en="Proof">Preuves</span></a>
+    <a href="#6" data-s="6"><b>6</b><span data-en="Milestone">Jalon</span></a>
+    <a href="#7" data-s="7"><b>7</b><span data-en="Dashboard">Tableau</span></a>
+    <a href="#8" data-s="8"><b>8</b><span data-en="Silikin">Silikin</span></a>
+    <a href="#9" data-s="9"><b>9</b><span data-en="Donor">Bailleur</span></a>
+    <a href="#10" data-s="10"><b>10</b><span data-en="AI">IA</span></a>
   </nav>
   <div class="lang" role="group" aria-label="Langue"><button class="on" data-l="fr">FR</button><button data-l="en">EN</button></div>
   <span class="fictb" data-en="Fictional data">Données fictives</span>
-  <div class="eu"><i class="flag"></i><span data-en="Funded by the European Union">Financé par l'Union européenne</span></div>
 </header>
 
-<!-- ============ 1. PARCOURS ============ -->
+<!-- ================= 1. PARCOURS ================= -->
 <section class="screen" id="s1">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">1</span><span data-en="The journey, stop by stop">Le parcours, escale par escale</span></h2>
-      <p data-en="Each stop is numbered. Each milestone unlocks a grant tranche, and the deliverables validated on proof add up into Mboka Farm's final file.">Chaque escale est numérotée. Chaque jalon débloque une tranche de subvention, et les livrables validés sur preuves s'additionnent jusqu'au dossier final de Mboka Farm.</p>
+      <h2><span class="s-num">1</span><span data-en="The whole journey, stop by stop">Tout le parcours, escale par escale</span></h2>
+      <p data-en="From the call for applications to the exit: every task is a stop, every milestone unlocks a tranche, and the outputs of each stage add up into the final file.">De l'appel à candidatures à la sortie : chaque tâche est une escale, chaque jalon débloque une tranche, et les livrables de chaque étape s'additionnent jusqu'au dossier final.</p>
     </div>
-    <div class="tags"><span class="tag">R1 · R4 · R10</span><span class="tag" data-en="Phone + computer">Téléphone + ordinateur</span></div>
+    <div class="tags"><span class="tag">R1 · R4 · R5 · R16</span><span class="tag" data-en="Computer + phone">Ordinateur + téléphone</span></div>
   </div>
   <div class="stage">
     <div class="app">
-      <div class="app-top"><img src="logo-silikin.svg" alt=""><span class="prog">Xelle · Venture Builder</span><span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:#F2295B">NK</span></div></div>
-      <div class="app-body">
-        <aside class="side">
-          <a class="on" href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a>
-          <a href="#5"><i data-lucide="layout-dashboard" class="i"></i><span data-en="Dashboard">Tableau de bord</span></a>
-          <a href="#4"><i data-lucide="flag" class="i"></i><span data-en="Milestones">Jalons</span></a>
-          <a href="#3"><i data-lucide="file-check-2" class="i"></i><span data-en="Reviews">Revues</span></a>
-          <a href="#6"><i data-lucide="shield-check" class="i"></i><span data-en="AI and trust">IA et confiance</span></a>
-          <div class="grp" data-en="Cohort 1">Cohorte 1</div>
-          <a href="#1"><span class="dotc" style="background:#14915A"></span>Mboka Farm</a>
-          <a href="#5"><span class="dotc" style="background:#14915A"></span>Kitoko Pay</a>
-          <a href="#5"><span class="dotc" style="background:#B86E00"></span>Lisanga Santé</a>
-          <a href="#5"><span class="dotc" style="background:#14915A"></span>Mwinda Solar</a>
-          <a href="#5"><span class="dotc" style="background:#D62445"></span>Buku Academy</a>
-        </aside>
-        <div class="main">
-          <div class="crumb"><span data-en="Cohort 1">Cohorte 1</span> › Mboka Farm · Agritech · Kinshasa</div>
-          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px">
-            <div><h3 data-en="Mboka Farm's journey">Le parcours de Mboka Farm</h3><p class="sub" data-en="Launched on 2 December 2026 · Day 64 of 182 · Phase 2 in progress">Lancé le 2 décembre 2026 · jour 64 sur 182 · phase 2 en cours</p></div>
-            <div style="width:260px"><div class="small muted" style="display:flex;justify-content:space-between"><span data-en="Deliverables validated">Livrables validés</span><b style="color:var(--ink)">10 / 22</b></div><div class="bar" style="margin-top:6px"><i style="width:45%"></i></div></div>
+      <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE">
+        <div class="tabs"><a class="on" href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#5"><i data-lucide="file-check-2" class="i i-s"></i><span data-en="Reviews">Revues</span></a><a href="#6"><i data-lucide="flag" class="i i-s"></i><span data-en="Milestones">Jalons</span></a><a href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a><a href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i><span data-en="Reports">Reporting</span></a></div>
+        <span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:var(--xb-d)">NK</span></div></div>
+      <div class="main">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px;flex-wrap:wrap">
+          <div class="mfl"><svg width="46" height="46"><use href="#mboka"/></svg><div><div class="crumb" style="margin:0"><span data-en="Cohort 1 · Venture Builder">Cohorte 1 · Venture Builder</span></div><h3 style="margin:0" data-en="Mboka Farm's journey">Le parcours de Mboka Farm</h3><p class="sub" data-en="Launched on 2 Dec. 2026 · day 75 of 182 · phase 2">Lancé le 2 déc. 2026 · jour 75 sur 182 · phase 2</p></div></div>
+          <div style="display:flex;gap:18px;flex-wrap:wrap">
+            <div style="width:190px"><div class="small muted" style="display:flex;justify-content:space-between"><span data-en="Tasks validated">Tâches validées</span><b style="color:var(--ink)">11 / 21</b></div><div class="prog" style="margin-top:6px"><i style="width:52%"></i></div></div>
+            <div style="width:190px"><div class="small muted" style="display:flex;justify-content:space-between"><span data-en="Grant received">Subvention reçue</span><b style="color:var(--ink)">35 %</b></div><div class="prog g" style="margin-top:6px"><i style="width:35%"></i></div></div>
           </div>
-
-          <div class="route">
-            
-                        <div class="stops">
-              <div class="stop"><svg class="hop done" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="dot done"><i data-lucide="check" class="i"></i></div><div class="nm" data-en="Selection">Sélection</div><div class="dt">78 / 100</div><div class="unl"><span class="pill p-green" data-en="Admitted">Admise</span></div></div>
-              <div class="stop"><svg class="hop done" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="dot done">1</div><div class="nm" data-en="Phase 1">Phase 1</div><div class="dt" data-en="2 Dec. to 31 Jan.">2 déc. au 31 janv.</div><div class="unl"><span class="pill p-green">8 / 8</span></div></div>
-              <div class="stop"><svg class="hop done" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="dot done jal"><span>J1</span></div><div class="nm" data-en="Milestone 1">Jalon 1</div><div class="dt">63 / 100</div><div class="unl"><span class="pill p-amber" data-en="Tranche 2 · 50 %">Tranche 2 · 50 %</span></div></div>
-              <div class="stop"><svg class="hop next" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="plane"><i data-lucide="plane"></i></div><div class="dot now">2</div><div class="nm" data-en="Phase 2">Phase 2</div><div class="dt" data-en="From 2 Feb.">Dès le 2 févr.</div><div class="unl"><span class="pill p-blue">2 / 10</span></div></div>
-              <div class="stop"><svg class="hop next" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="dot next jal"><span>J2</span></div><div class="nm" data-en="Milestone 2">Jalon 2</div><div class="dt" data-en="Month 4 *">Mois 4 *</div><div class="unl"><span class="pill p-grey">Tranche 3</span></div></div>
-              <div class="stop"><svg class="hop next" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30,30 Q50,-6 70,30"/><path class="hd" d="M64,22 L71,31 L61,30"/></svg><div class="dot next jal"><span>J3</span></div><div class="nm" data-en="Milestone 3">Jalon 3</div><div class="dt" data-en="Month 6 *">Mois 6 *</div><div class="unl"><span class="pill p-grey" data-en="Final tranche">Tranche finale</span></div></div>
-              <div class="stop"><div class="dot next"><i data-lucide="flag" class="i"></i></div><div class="nm" data-en="Exit">Sortie</div><div class="dt" data-en="2 June 2027">2 juin 2027</div><div class="unl"><span class="pill p-grey" data-en="Final file">Dossier final</span></div></div>
-            </div>
-            <div class="lanes">
-              <div class="lane"><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="Application file">Dossier de candidature</span></div><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="Jury minutes">PV du jury</span></div></div>
-              <div class="lane"><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="P1.01 Diagnostic">P1.01 Diagnostic</span></div><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="Sales proof, 3 months">Preuves de ventes, 3 mois</span></div><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="P1.02 to P1.08">P1.02 à P1.08</span></div></div>
-              <div class="lane"><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="Milestone 1 minutes">PV du jalon 1</span></div><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i><span data-en="Targets M3 to M6">Cibles M3 à M6</span></div></div>
-              <div class="lane"><div class="out ok"><i data-lucide="check-circle-2" class="i i-xs"></i>P2.01, P2.02</div><div class="out wait"><i data-lucide="clock-3" class="i i-xs"></i><span data-en="P2.03 under review">P2.03 en revue</span></div></div>
-              <div class="lane"><div class="out wait"><i data-lucide="lock" class="i i-xs"></i><span data-en="Unlocked by phase 2">Débloqué par la phase 2</span></div></div>
-              <div class="lane"><div class="out wait"><i data-lucide="lock" class="i i-xs"></i><span data-en="Unlocked by J2">Débloqué par J2</span></div></div>
-              <div class="lane"><div class="out wait"><i data-lucide="lock" class="i i-xs"></i><span data-en="All outputs combined">Tous les livrables réunis</span></div></div>
-            </div>
-          </div>
-
-          <div class="merge">
-            <div class="final">
-              <div class="stack"><span><i data-lucide="file-text" class="i"></i></span><span><i data-lucide="receipt" class="i"></i></span><span><i data-lucide="bar-chart-3" class="i"></i></span><span><i data-lucide="award" class="i"></i></span></div>
-              <div style="flex:1"><h4 data-en="Mboka Farm's final file builds up at every stop">Le dossier final de Mboka Farm se construit à chaque escale</h4><p data-en="Diagnostic + proof + milestone minutes + monthly indicators = exit file and donor report, without re-entering anything.">Diagnostic + preuves + PV des jalons + indicateurs mensuels = dossier de sortie et rapport au bailleur, sans ressaisie.</p></div>
-              <button class="btn btn-y" data-toast="Aperçu du dossier final (10 livrables sur 22)" data-toast-en="Final file preview (10 of 22 deliverables)"><i data-lucide="eye" class="i"></i><span data-en="Preview">Aperçu</span></button>
-            </div>
-            <div class="card" style="width:270px">
-              <div class="small muted" style="font-weight:700" data-en="Next stop">Prochaine escale</div>
-              <div class="exo" style="font-weight:700;font-size:16px;margin:4px 0" data-en="Milestone 2 · month 4 *">Jalon 2 · mois 4 *</div>
-              <div class="small muted" data-en="8 tasks left in phase 2. The team module checks the file 10 days before.">Encore 8 tâches de la phase 2. Le module équipe vérifie le dossier 10 jours avant.</div>
-            </div>
-          </div>
-          <p class="small muted" style="margin:10px 0 0" data-en="* Position of milestones 2 and 3 to be set from the Xelle playbook when it is imported.">* Place des jalons 2 et 3 à caler sur le playbook Xelle à l'import.</p>
         </div>
+
+        <div class="route">
+          <div class="track" id="track"></div>
+          <div class="lanes" id="lanes"></div>
+          <div class="eng">
+            <span class="small" style="font-weight:800;color:var(--navy);white-space:nowrap;padding-right:6px" data-en="Engagement">Engagement</span>
+            <div class="lv on" data-en="Level 0 · on time">Niveau 0 · à jour</div><div class="lv" data-en="1 · reminder">1 · rappel</div><div class="lv" data-en="2 · meeting">2 · entretien</div><div class="lv" data-en="3 · warning">3 · avertissement</div><div class="lv" data-en="4 · tranche frozen">4 · tranche gelée</div><div class="lv" data-en="5 · exit">5 · sortie</div>
+            <span class="pill p-grey" style="margin-left:6px"><i data-lucide="pause" class="i i-xs"></i><span data-en="Medical or maternity pause: dates and tranche shift">Pause médicale ou maternité : dates et tranche décalées</span></span>
+          </div>
+        </div>
+
+        <div class="fuse">
+          <div class="src"><span data-en="Diagnostic">Diagnostic</span><span data-en="Proof of sales">Preuves de ventes</span><span data-en="21 deliverables">21 livrables</span><span data-en="Milestone minutes">PV des jalons</span><span data-en="Monthly figures">Chiffres mensuels</span><span data-en="Expert opinions">Avis des experts</span></div>
+          <span class="eq">=</span>
+          <div class="res"><i data-lucide="folder-check" class="i" style="color:var(--gold-d)"></i><span data-en="Exit file + donor report, without re-entry">Dossier de sortie + rapport bailleur, sans ressaisie</span></div>
+          <span class="sp" style="flex:1"></span>
+          <button class="btn btn-g" data-toast="Dossier final : 11 livrables sur 21 déjà réunis" data-toast-en="Final file: 11 of 21 deliverables already gathered"><i data-lucide="eye" class="i i-s"></i><span data-en="Preview">Aperçu</span></button>
+        </div>
+        <p class="small muted" style="margin:10px 0 0" data-en="* Task titles, engagement rules and the position of milestones 2 and 3 come from the Xelle playbook, imported after signature.">* Intitulés des tâches, règles d'engagement et place des jalons 2 et 3 : repris du playbook Xelle, importé après signature.</p>
       </div>
     </div>
 
     <div>
       <div class="phone"><div class="scr">
         <div class="ph-status"><span>09:41</span><span>4G ▂▄▆</span></div>
-        <div class="ph-bar"><img src="logo-silikin.svg" alt=""><span class="t" data-en="My journey">Mon parcours</span><i data-lucide="bell" class="i"></i></div>
-        <div class="ph-body" style="padding-top:12px">
-          <div class="vcard" style="margin:0 0 14px;background:var(--blue-dd);color:#fff;border:0">
-            <div style="display:flex;align-items:center;gap:8px"><i data-lucide="plane" class="i" style="color:var(--yellow)"></i><b class="exo" data-en="You are in phase 2">Vous êtes en phase 2</b></div>
-            <div class="small" style="color:#CFE3F5;margin-top:4px" data-en="Milestone 1 passed: tranche 2 is 50 % unlocked. 2 conditions left for the balance.">Jalon 1 passé : la tranche 2 est débloquée à 50 %. Il reste 2 conditions pour le solde.</div>
+        <div class="ph-bar"><svg width="26" height="26"><use href="#mboka"/></svg><span class="t" data-en="My journey">Mon parcours</span><i data-lucide="bell" class="i"></i></div>
+        <div class="ph-body" style="padding-top:10px">
+          <div class="vcard" style="margin:0 0 12px;background:var(--navy);color:#fff;border:0">
+            <div style="display:flex;align-items:center;gap:8px"><i data-lucide="plane" class="i" style="color:var(--gold)"></i><b class="nu" data-en="Next stop: P2.03">Prochaine escale : P2.03</b></div>
+            <div class="small" style="color:#C9D7EE;margin-top:4px" data-en="Milestone 1 passed: tranche 2 is 50 % unlocked. 2 conditions left for the balance.">Jalon 1 passé : la tranche 2 est débloquée à 50 %. Il reste 2 conditions pour le solde.</div>
           </div>
-          <div class="vroute">
-            <div class="vstop done"><div class="vdot" style="background:var(--blue);color:#fff"><i data-lucide="check" class="i i-s"></i></div><div class="vtxt"><b data-en="Selection">Sélection</b><span data-en="78 / 100 · admitted">78 / 100 · admise</span></div></div>
-            <div class="vstop done"><div class="vdot" style="background:var(--blue);color:#fff">1</div><div class="vtxt"><b data-en="Phase 1">Phase 1</b><span data-en="8 of 8 tasks validated">8 tâches sur 8 validées</span></div></div>
-            <div class="vstop done"><div class="vdot" style="background:var(--blue);color:#fff;border-radius:12px">J1</div><div class="vtxt"><b data-en="Milestone 1 · 63 / 100">Jalon 1 · 63 / 100</b><span data-en="Tranche 2: 50 % paid">Tranche 2 : 50 % versés</span></div></div>
-            <div class="vstop"><div class="vdot" style="background:var(--yellow)">2</div><div class="vtxt"><b data-en="Phase 2 · now">Phase 2 · maintenant</b><span data-en="2 of 10 tasks validated">2 tâches sur 10 validées</span>
-              <div class="vcard">
-                <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">P2.03</b><span class="pill p-amber" data-en="Under review">En revue</span></div>
-                <div class="small muted" style="margin-top:4px" data-en="Due 14 Feb. · the proof checker answered">À rendre le 14 févr. · le vérificateur a répondu</div>
-                <a href="#3" class="btn btn-p" style="margin-top:8px;padding:8px 12px;font-size:13px;text-decoration:none"><span data-en="See the feedback">Voir le retour</span><i data-lucide="arrow-right" class="i i-s"></i></a>
-              </div></div></div>
-            <div class="vstop"><div class="vdot" style="background:#fff;color:var(--ink3);border:3px dashed #B9C9DB;border-radius:12px">J2</div><div class="vtxt"><b data-en="Milestone 2">Jalon 2</b><span data-en="Unlocks tranche 3">Débloque la tranche 3</span></div></div>
-            <div class="vstop"><div class="vdot" style="background:#fff;color:var(--ink3);border:3px dashed #B9C9DB;border-radius:12px">J3</div><div class="vtxt"><b data-en="Milestone 3">Jalon 3</b><span data-en="Final tranche and exit file">Tranche finale et dossier de sortie</span></div></div>
-          </div>
+          <div class="vstop done"><div class="vdot" style="background:var(--xb);color:#fff"><i data-lucide="check" class="i i-s"></i></div><div class="vtxt"><b data-en="Application and jury">Candidature et jury</b><span>78 / 100 · <span data-en="laureate">lauréate</span></span></div></div>
+          <div class="vstop done"><div class="vdot" style="background:var(--xb);color:#fff">1</div><div class="vtxt"><b data-en="Phase 1 · 8 tasks">Phase 1 · 8 tâches</b><div class="mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+          <div class="vstop done"><div class="vdot" style="background:var(--xb);color:#fff;border-radius:11px">J1</div><div class="vtxt"><b data-en="Milestone 1 · 63 / 100">Jalon 1 · 63 / 100</b><span data-en="Tranche 2: 50 % paid">Tranche 2 : 50 % versés</span></div></div>
+          <div class="vstop"><div class="vdot" style="background:var(--gold)">2</div><div class="vtxt"><b data-en="Phase 2 · now">Phase 2 · maintenant</b><div class="mini"><i></i><i></i><i class="r"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
+            <div class="vcard" style="margin-top:8px"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:13px">P2.03</b><span class="pill p-amber" data-en="Under review">En revue</span></div><div class="small muted" style="margin-top:4px" data-en="Due 14 Feb. · the proof checker answered">À rendre le 14 févr. · le vérificateur a répondu</div><a href="#5" class="btn btn-p" style="margin-top:8px;padding:8px 12px;font-size:13px"><span data-en="See the feedback">Voir le retour</span><i data-lucide="arrow-right" class="i i-s"></i></a></div></div></div>
+          <div class="vstop"><div class="vdot" style="background:#fff;color:var(--ink3);border:3px dashed #B9C6DA;border-radius:11px">J2</div><div class="vtxt"><b data-en="Milestone 2">Jalon 2</b><span data-en="Unlocks tranche 3">Débloque la tranche 3</span></div></div>
+          <div class="vstop"><div class="vdot" style="background:#fff;color:var(--ink3);border:3px dashed #B9C6DA;border-radius:11px">J3</div><div class="vtxt"><b data-en="Milestone 3 and exit">Jalon 3 et sortie</b><span data-en="Final tranche, exit file">Tranche finale, dossier de sortie</span></div></div>
         </div>
-        <div class="ph-tabs"><a class="on" href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a><a href="#2"><i data-lucide="list-checks" class="i"></i><span data-en="Tasks">Tâches</span></a><a href="#2"><i data-lucide="sparkles" class="i"></i><span data-en="Assistant">Assistant</span></a><a href="#5"><i data-lucide="line-chart" class="i"></i><span data-en="My numbers">Mes chiffres</span></a></div>
+        <div class="ph-tabs"><a class="on" href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a><a href="#4"><i data-lucide="list-checks" class="i"></i><span data-en="Tasks">Tâches</span></a><a href="#4"><i data-lucide="sparkles" class="i"></i><span data-en="Assistant">Assistant</span></a><a href="#7"><i data-lucide="line-chart" class="i"></i><span data-en="My numbers">Mes chiffres</span></a></div>
       </div></div>
-      <div class="ph-label" data-en="Entrepreneur, on her phone">Entrepreneure, sur son téléphone</div>
+      <div class="ph-label" data-en="The entrepreneur, on her phone">L'entrepreneure, sur son téléphone</div>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. DIAGNOSTIC ============ -->
+<!-- ================= 2. CANDIDATURES ================= -->
 <section class="screen" id="s2">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">2</span><span data-en="Task P1.01 with the diagnostic assistant">Tâche P1.01 avec l'assistant du diagnostic</span></h2>
+      <h2><span class="s-num">2</span><span data-en="Call for applications and weighted jury">Appel à candidatures et jury pondéré</span></h2>
+      <p data-en="Candidates apply from their phone. The team module prepares a summary sheet per application; the team pre-selects; internal and external jurors score on a weighted grid; the platform publishes the list of laureates.">Les candidates postulent depuis leur téléphone. Le module équipe prépare une fiche de synthèse par dossier ; l'équipe présélectionne ; des jurés internes et externes notent sur une grille pondérée ; la plateforme publie la liste des lauréates.</p>
+    </div>
+    <div class="tags"><span class="tag">R16 · R13 · C2</span><span class="tag" data-en="Eliminatory requirement">Exigence éliminatoire</span></div>
+  </div>
+  <div class="stage">
+    <div>
+      <div class="phone"><div class="scr">
+        <div class="ph-status"><span>18:20</span><span>3G ▂▄</span></div>
+        <div class="ph-bar"><img class="x" src="logo-xelle.png" alt="xELLE"><span class="t"></span><span class="pill p-blue">FR · EN</span></div>
+        <div class="ph-body">
+          <div class="nu" style="font-weight:900;font-size:20px;color:var(--xb);line-height:1.15" data-en="You aim well. What if you aimed for excellence?">Tu vises bien. Et si tu visais l'excellence ?</div>
+          <div class="small muted" style="margin-top:4px" data-en="Venture Builder · cohort 2 · closes on 15 March">Venture Builder · cohorte 2 · clôture le 15 mars</div>
+          <div class="steps" style="margin-top:12px"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+          <div class="small" style="font-weight:700;color:var(--navy)" data-en="Step 3 of 4 · Your company">Étape 3 sur 4 · Votre entreprise</div>
+          <div class="field"><small data-en="Company name">Nom de l'entreprise</small>Mboka Farm</div>
+          <div class="field"><small data-en="Sector">Secteur</small>Agritech</div>
+          <div class="field"><small>RCCM · NIF</small>CD/KNG/RCCM/24-B-01873 · A2412345K</div>
+          <div class="field"><small data-en="Monthly sales (approx.)">Ventes mensuelles (environ)</small>3 200 $</div>
+          <div class="field" style="display:flex;align-items:center;gap:8px"><i data-lucide="paperclip" class="i i-s" style="color:var(--xb)"></i><span data-en="2 documents · RCCM, sales notebook">2 pièces · RCCM, cahier de ventes</span></div>
+          <div class="field" style="display:flex;align-items:center;gap:8px;background:var(--xb-ll)"><i data-lucide="mic" class="i i-s" style="color:var(--xb)"></i><span data-en="Pitch in 60 seconds, by voice">Pitch en 60 secondes, à la voix</span></div>
+          <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:12px;padding:12px" data-toast="Étape 4 : consentements (programme et IA, séparés)" data-toast-en="Step 4: consents (programme and AI, separate)"><span data-en="Continue">Continuer</span><i data-lucide="arrow-right" class="i i-s"></i></button>
+        </div>
+      </div></div>
+      <div class="ph-label" data-en="Online application, on a phone">Candidature en ligne, sur téléphone</div>
+    </div>
+    <div class="app">
+      <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a class="on" href="#2"><i data-lucide="inbox" class="i i-s"></i><span data-en="Applications">Candidatures</span></a><a href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i><span data-en="Reports">Reporting</span></a></div><span class="sp"></span><div class="who"><span data-en="External juror">Juré externe</span><span class="av" style="background:#8A5CF6">JB</span></div></div>
+      <div class="main">
+        <div class="crumb" data-en="Venture Builder · cohort 1 · jury of 18 Nov. 2026">Venture Builder · cohorte 1 · jury du 18 nov. 2026</div>
+        <div class="flow" style="margin:6px 0 16px">
+          <div class="seg" style="background:var(--xb);color:#fff"><span data-en="63 applications">63 candidatures</span></div><i data-lucide="chevron-right" class="i" style="color:var(--xb)"></i>
+          <div class="seg" style="background:var(--xb);color:#fff"><span data-en="41 complete">41 complètes</span></div><i data-lucide="chevron-right" class="i" style="color:var(--xb)"></i>
+          <div class="seg" style="background:var(--xb);color:#fff"><span data-en="12 pre-selected">12 présélectionnées</span></div><i data-lucide="chevron-right" class="i" style="color:var(--xb)"></i>
+          <div class="seg" style="background:var(--gold);color:var(--ink)"><span data-en="Jury: 5 laureates">Jury : 5 lauréates</span></div>
+        </div>
+        <div class="row">
+          <div style="flex:1;min-width:0" class="col">
+            <div class="card tbl" style="padding:6px 6px 0">
+              <table class="g">
+                <tr><th data-en="Candidate">Candidate</th><th style="text-align:center" data-en="Juror 1 (int.)">Juré 1 (int.)</th><th style="text-align:center" data-en="Juror 2 (ext.)">Juré 2 (ext.)</th><th style="text-align:center" data-en="Juror 3 (ext.)">Juré 3 (ext.)</th><th style="text-align:center" data-en="Weighted">Pondéré</th><th data-en="Result">Résultat</th></tr>
+                <tr class="sel"><td><div class="co"><svg width="30" height="30"><use href="#mboka"/></svg><div><b>Mboka Farm</b><span class="small muted">Agritech</span></div></div></td><td class="n">80</td><td class="n">76</td><td class="n">78</td><td class="n">78</td><td><span class="pill p-green" data-en="Laureate">Lauréate</span></td></tr>
+                <tr><td><div class="co"><span class="co-logo" style="background:#1F4FA0">K</span><div><b>Kitoko Pay</b><span class="small muted">Fintech</span></div></div></td><td class="n">84</td><td class="n">81</td><td class="n">82</td><td class="n">82</td><td><span class="pill p-green" data-en="Laureate">Lauréate</span></td></tr>
+                <tr><td><div class="co"><span class="co-logo" style="background:#C2417B">L</span><div><b>Lisanga Santé</b><span class="small muted">Healthtech</span></div></div></td><td class="n">75</td><td class="n">74</td><td class="n">77</td><td class="n">75</td><td><span class="pill p-green" data-en="Laureate">Lauréate</span></td></tr>
+                <tr><td><div class="co"><span class="co-logo" style="background:#E08A12">M</span><div><b>Mwinda Solar</b><span class="small muted">Cleantech</span></div></div></td><td class="n">73</td><td class="n">78</td><td class="n">72</td><td class="n">74</td><td><span class="pill p-green" data-en="Laureate">Lauréate</span></td></tr>
+                <tr><td><div class="co"><span class="co-logo" style="background:#0E8C8C">B</span><div><b>Buku Academy</b><span class="small muted">Edtech</span></div></div></td><td class="n">70</td><td class="n">72</td><td class="n">71</td><td class="n">71</td><td><span class="pill p-green" data-en="Laureate">Lauréate</span></td></tr>
+                <tr><td><div class="co"><span class="co-logo" style="background:#8892A6">T</span><div><b>Tosala Foods</b><span class="small muted">Agritech</span></div></div></td><td class="n">69</td><td class="n">61</td><td class="n">66</td><td class="n">65</td><td><span class="pill p-grey" data-en="Waiting list">Liste d'attente</span></td></tr>
+              </table>
+            </div>
+            <div class="card small" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center"><b class="nu" style="color:var(--navy)" data-en="Grid (weights)">Grille (poids)</b><span data-en="Team 25">Équipe 25</span><span data-en="Market and traction 25">Marché et traction 25</span><span data-en="Product 20">Produit 20</span><span data-en="Impact on women and jobs 20">Impact femmes et emplois 20</span><span data-en="Formalisation 10">Formalisation 10</span><span class="pill p-blue" data-en="2 external jurors · confidentiality signed">2 jurés externes · confidentialité signée</span></div>
+          </div>
+          <div style="width:330px;flex-shrink:0" class="w300 col">
+            <div class="card aicard">
+              <span class="ai"><i data-lucide="users" class="i i-xs"></i><span data-en="Team module · summary sheet">Module équipe · fiche de synthèse</span></span>
+              <div class="mfl" style="margin-top:10px"><svg width="34" height="34"><use href="#mboka"/></svg><b class="nu" style="color:var(--navy)">Mboka Farm</b></div>
+              <div class="small" style="margin-top:10px;line-height:1.5"><b data-en="Strengths">Atouts</b><br><span data-en="Paying customers (41 households, 2 restaurants), sales noted every day, 3 women employees.">Clients payants (41 ménages, 2 restaurants), ventes notées chaque jour, 3 salariées.</span></div>
+              <div class="small" style="margin-top:8px;line-height:1.5"><b data-en="Points of attention">Points d'attention</b><br><span data-en="Part of the sales in cash; no cold chain.">Une partie des ventes en espèces ; pas de chaîne du froid.</span></div>
+              <div class="small" style="margin-top:8px;line-height:1.5"><b data-en="Questions for the jury">Questions pour le jury</b><br><span data-en="1. How are WhatsApp orders tracked? 2. Who are the 2 restaurants?">1. Comment sont suivies les commandes WhatsApp ? 2. Qui sont les 2 restaurants ?</span></div>
+              <div class="small muted" style="margin-top:8px" data-en="Proposal only: the AI neither ranks nor rejects anyone.">Proposition seulement : l'IA ne classe ni n'écarte personne.</div>
+            </div>
+            <button class="btn btn-p" style="justify-content:center" data-toast="Liste des lauréates publiée, chaque candidate prévenue (FR ou EN)" data-toast-en="List of laureates published, each candidate notified (FR or EN)"><i data-lucide="award" class="i i-s"></i><span data-en="Publish the laureates">Publier les lauréates</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. FICHE ENTREPRISE ================= -->
+<section class="screen" id="s3">
+  <div class="s-head">
+    <div>
+      <h2><span class="s-num">3</span><span data-en="The company profile">La fiche profil de l'entreprise</span></h2>
+      <p data-en="Everything about Mboka Farm on one page: identity, team, where she is in the journey, tranches, engagement, experts, consents and documents.">Tout Mboka Farm sur une page : identité, équipe, où elle en est du parcours, tranches, engagement, experts, consentements et documents.</p>
+    </div>
+    <div class="tags"><span class="tag">R5 · R7 · R9 · R17</span></div>
+  </div>
+  <div class="app">
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a class="on" href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#5"><i data-lucide="file-check-2" class="i i-s"></i><span data-en="Reviews">Revues</span></a><a href="#6"><i data-lucide="flag" class="i i-s"></i><span data-en="Milestones">Jalons</span></a><a href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a><a href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i><span data-en="Reports">Reporting</span></a></div><span class="sp"></span><div class="who"><span data-en="Reviewer">Personne de référence</span><span class="av" style="background:var(--navy)">NA</span></div></div>
+    <div class="main">
+      <div class="crumb"><span data-en="Companies">Entreprises</span> › <span data-en="Cohort 1">Cohorte 1</span> › Mboka Farm</div>
+      <div class="hero">
+        <svg width="84" height="84"><use href="#mboka"/></svg>
+        <div style="flex:1;min-width:220px">
+          <h3 style="font-size:28px">Mboka Farm</h3>
+          <div class="sub" data-en="Fresh vegetables delivered to homes and restaurants, ordered on WhatsApp">Légumes frais livrés aux ménages et aux restaurants, commandés par WhatsApp</div>
+          <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap"><span class="pill p-green">Agritech</span><span class="pill p-blue">Kinshasa · Limete</span><span class="pill p-grey" data-en="Formalised · RCCM and NIF">Formalisée · RCCM et NIF</span><span class="pill p-gold" data-en="Cohort 1 · Venture Builder">Cohorte 1 · Venture Builder</span></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center"><span class="av" style="background:#C2417B;width:52px;height:52px;font-size:17px">GM</span><div><b class="nu" style="color:var(--navy)">Grâce Mbuyi</b><div class="small muted" data-en="Founder and manager">Fondatrice et gérante</div></div></div>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="col" style="flex:1;min-width:0">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ct" data-en="Where she is">Où elle en est</span><a href="#1" class="small" style="color:var(--xb);font-weight:700" data-en="See the journey">Voir le parcours</a></div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:12px;flex-wrap:wrap">
+              <span class="pill p-green"><i data-lucide="check" class="i i-xs"></i><span data-en="Selection 78">Sélection 78</span></span><i data-lucide="chevron-right" class="i i-s muted"></i>
+              <span class="pill p-green">Phase 1 · 8/8</span><i data-lucide="chevron-right" class="i i-s muted"></i>
+              <span class="pill p-amber" data-en="J1 · 63 · tranche 2 at 50 %">J1 · 63 · tranche 2 à 50 %</span><i data-lucide="chevron-right" class="i i-s muted"></i>
+              <span class="pill p-blue">Phase 2 · 2/10</span><i data-lucide="chevron-right" class="i i-s muted"></i>
+              <span class="pill p-grey">J2</span><span class="pill p-grey">J3</span>
+            </div>
+            <div class="row" style="margin-top:14px;gap:10px">
+              <div class="kpi"><div class="l" data-en="Sales M2">Ventes M2</div><div class="v">2 850 $</div></div>
+              <div class="kpi"><div class="l" data-en="Jobs">Emplois</div><div class="v">3 → 4</div></div>
+              <div class="kpi alert"><div class="l" style="color:var(--red)" data-en="Cash runway">Autonomie</div><div class="v" style="color:var(--red)" data-en="1.3 mo.">1,3 mois</div></div>
+              <div class="kpi"><div class="l" data-en="Engagement">Engagement</div><div class="v" style="color:var(--green)" data-en="Level 0">Niveau 0</div></div>
+            </div>
+          </div>
+          <div class="card">
+            <span class="ct" data-en="Grant tranches">Tranches de subvention</span>
+            <div style="display:flex;flex-direction:column;gap:9px;margin-top:10px;font-size:13px">
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:96px" data-en="Tranche 1">Tranche 1</span><div class="prog g" style="flex:1"><i style="width:100%"></i></div><span class="pill p-green" data-en="Paid 2 Dec.">Versée 2 déc.</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:96px" data-en="Tranche 2">Tranche 2</span><div class="prog g" style="flex:1"><i style="width:50%"></i></div><span class="pill p-amber" data-en="50 % · balance under conditions">50 % · solde sous conditions</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:96px" data-en="Tranche 3">Tranche 3</span><div class="prog" style="flex:1"><i style="width:0"></i></div><span class="pill p-grey" data-en="At J2">Au J2</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:96px" data-en="Final tranche">Tranche finale</span><div class="prog" style="flex:1"><i style="width:0"></i></div><span class="pill p-grey" data-en="At J3">Au J3</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ct" data-en="Documents (central library, versions)">Documents (base centrale, versions)</span><button class="btn btn-o" style="padding:6px 11px;font-size:12.5px" data-toast="Dossier de Mboka Farm exporté (PDF, XLSX, JSON)" data-toast-en="Mboka Farm's file exported (PDF, XLSX, JSON)"><i data-lucide="download" class="i i-xs"></i><span data-en="Export">Exporter</span></button></div>
+            <div class="dlist" style="margin-top:6px">
+              <div><i data-lucide="file-text" class="i i-s" style="color:var(--xb)"></i><span style="flex:1" data-en="P1.01 Diagnostic · v2">P1.01 Diagnostic · v2</span><span class="pill p-green" data-en="Validated">Validée</span><span class="small muted">12/12</span></div>
+              <div><i data-lucide="image" class="i i-s" style="color:var(--xb)"></i><span style="flex:1" data-en="Sales notebook, Oct. to Jan. · 4 photos">Cahier de ventes, oct. à janv. · 4 photos</span><span class="pill p-green" data-en="Proof">Preuve</span><span class="small muted">03/02</span></div>
+              <div><i data-lucide="file-spreadsheet" class="i i-s" style="color:var(--xb)"></i><span style="flex:1" data-en="Bimonthly report Dec.–Jan.">Rapport bimestriel déc.–janv.</span><span class="pill p-blue" data-en="Generated">Généré</span><span class="small muted">05/02</span></div>
+              <div><i data-lucide="file-signature" class="i i-s" style="color:var(--xb)"></i><span style="flex:1" data-en="Milestone 1 minutes · signed">PV du jalon 1 · signé</span><span class="pill p-green" data-en="Signed">Signé</span><span class="small muted">02/02</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width:330px;flex-shrink:0" >
+          <div class="card">
+            <span class="ct" data-en="Identity">Identité</span>
+            <div class="kv" style="margin-top:10px">
+              <span>RCCM</span><b>CD/KNG/RCCM/24-B-01873</b>
+              <span>NIF</span><b>A2412345K</b>
+              <span data-en="Created">Création</span><b data-en="March 2024">mars 2024</b>
+              <span data-en="Team">Équipe</span><b data-en="3 women employees">3 salariées</b>
+              <span data-en="Channels">Canaux</span><b>WhatsApp · Orange Money</b>
+              <span data-en="Language">Langue</span><b data-en="French">Français</b>
+            </div>
+          </div>
+          <div class="card">
+            <span class="ct" data-en="Her experts">Ses experts</span>
+            <div class="ex"><span class="av" style="background:#14915A;width:28px;height:28px;font-size:10px">JM</span><span style="flex:1" data-en="Finance · J. Mutombo">Finance · J. Mutombo</span><span class="small muted">6 h / 10</span></div>
+            <div class="ex"><span class="av" style="background:#E08A12;width:28px;height:28px;font-size:10px">AK</span><span style="flex:1" data-en="Sales · A. Kalala">Commercial · A. Kalala</span><span class="small muted">3 h / 8</span></div>
+            <div class="ex"><span class="av" style="background:#8A5CF6;width:28px;height:28px;font-size:10px">RL</span><span style="flex:1" data-en="Product · R. Lukusa">Produit · R. Lukusa</span><span class="small muted">2 h / 6</span></div>
+          </div>
+          <div class="card">
+            <span class="ct" data-en="Consents">Consentements</span>
+            <div class="ex"><i data-lucide="shield-check" class="i i-s" style="color:var(--green)"></i><span style="flex:1" data-en="Programme and data">Programme et données</span><span class="small muted">02/12</span></div>
+            <div class="ex"><i data-lucide="sparkles" class="i i-s" style="color:var(--green)"></i><span style="flex:1" data-en="Processing by the AI (separate)">Traitement par l'IA (distinct)</span><span class="small muted">02/12</span></div>
+            <div class="ex"><i data-lucide="image" class="i i-s" style="color:var(--ink3)"></i><span style="flex:1" data-en="Photos for communication">Photos pour la communication</span><span class="pill p-grey" data-en="Refused">Refusé</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. DIAGNOSTIC ================= -->
+<section class="screen" id="s4">
+  <div class="s-head">
+    <div>
+      <h2><span class="s-num">4</span><span data-en="Task P1.01 with the diagnostic assistant">Tâche P1.01 avec l'assistant du diagnostic</span></h2>
       <p data-en="The assistant asks the form's questions in order, accepts voice, and helps find a figure in the entrepreneur's own documents: a photographed sales notebook, an Orange Money statement.">L'assistant pose les questions du formulaire dans l'ordre, accepte la voix, et aide à retrouver un chiffre dans les pièces de l'entrepreneure : cahier de ventes photographié, relevé Orange Money.</p>
     </div>
     <div class="tags"><span class="tag">R0 · R2 · C2</span><span class="tag" data-en="Demo scenario 2">Scénario de démo 2</span></div>
@@ -411,32 +586,31 @@ table.g tr.blk td{background:#FFF6F8}
     <div>
       <div class="phone"><div class="scr">
         <div class="ph-status"><span>09:41</span><span>3G ▂▄</span></div>
-        <div class="ph-bar"><a href="#1" style="color:#fff"><i data-lucide="arrow-left" class="i"></i></a><span class="t">P1.01 · Diagnostic</span><span class="ai" style="background:rgba(255,255,255,.18);color:#fff">FR</span></div>
+        <div class="ph-bar"><a href="#1"><i data-lucide="arrow-left" class="i"></i></a><svg width="24" height="24"><use href="#mboka"/></svg><span class="t">P1.01 · Diagnostic</span><span class="pill p-blue">FR</span></div>
         <div class="ph-body" style="padding:10px 12px">
           <div class="small muted" style="display:flex;justify-content:space-between;font-weight:600"><span data-en="Question 4 of 9 · Sales">Question 4 sur 9 · Ventes</span><span data-en="Due 9 Dec.">À rendre le 9 déc.</span></div>
           <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
           <div class="msg a"><div class="who-ai"><i data-lucide="sparkles" class="i i-xs"></i><span data-en="Diagnostic assistant">Assistant du diagnostic</span></div><span data-en="How much did Mboka Farm sell in October? If you are not sure, send me a photo of your sales notebook and your Orange Money statement: I will look for the total with you.">Combien Mboka Farm a-t-elle vendu en octobre ? Si vous n'êtes pas sûre, envoyez-moi la photo de votre cahier de ventes et votre relevé Orange Money : je cherche le total avec vous.</span></div>
-          <div class="msg u"><div class="voice"><i data-lucide="play" class="i i-s"></i><div class="wave"><i style="height:6px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:18px"></i><i style="height:11px"></i><i style="height:16px"></i><i style="height:7px"></i><i style="height:13px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:12px"></i><i style="height:6px"></i></div><span style="font-size:12px">0:14</span></div><div style="font-size:12px;opacity:.85;margin-top:5px" data-en="“Around three thousand dollars, everything is in the notebook.”">« À peu près trois mille dollars, tout est dans le cahier. »</div></div>
+          <div class="msg u"><div class="voice"><i data-lucide="play" class="i i-s"></i><div class="wave"><i style="height:6px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:18px"></i><i style="height:11px"></i><i style="height:16px"></i><i style="height:7px"></i><i style="height:13px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:12px"></i></div><span style="font-size:12px">0:14</span></div><div style="font-size:12px;opacity:.88;margin-top:5px" data-en="“Around three thousand dollars, everything is in the notebook.”">« À peu près trois mille dollars, tout est dans le cahier. »</div></div>
           <div class="att">
             <div class="thumb"><div class="ph nb">Oct. 2026<br>02 Gombe 85$<br>05 Ma Campagne 120$<br>09 Limete 64$<br><b>Total 3 150$</b></div><div class="cap"><i data-lucide="image" class="i i-xs"></i><span data-en="Notebook p.2">Cahier p.2</span></div></div>
             <div class="thumb"><div class="ph om"><div class="h">Orange Money</div><div class="l"><span>03/10</span><span>+120</span></div><div class="l"><span>05/10</span><span>+85</span></div><div class="l"><span>12/10</span><span>+210</span></div><div class="l"><span>…</span><span></span></div><div class="l"><b>Oct.</b><b>2 870 $</b></div></div><div class="cap"><i data-lucide="file-text" class="i i-xs"></i><span data-en="Statement Oct.">Relevé oct.</span></div></div>
           </div>
-          <div class="msg a"><div class="who-ai"><i data-lucide="sparkles" class="i i-xs"></i><span data-en="Diagnostic assistant">Assistant du diagnostic</span></div><span data-en="Your notebook shows 3,150 $ for October (page 2, last line). Orange Money shows 2,870 $: the difference is probably cash. I write 3,150 $ and note “280 $ in cash”. Is that right?">Votre cahier indique <b>3 150 $</b> pour octobre (page 2, dernière ligne). Orange Money montre <b>2 870 $</b> : la différence vient sans doute des espèces. J'inscris 3 150 $ et je note « 280 $ en espèces ». C'est juste ?</span>
+          <div class="msg a"><div class="who-ai"><i data-lucide="sparkles" class="i i-xs"></i><span data-en="Diagnostic assistant">Assistant du diagnostic</span></div><span data-en="Your notebook shows <b>3,150 $</b> for October (page 2, last line). Orange Money shows <b>2,870 $</b>: the difference is probably cash. I write 3,150 $ and note “280 $ in cash”. Is that right?">Votre cahier indique <b>3 150 $</b> pour octobre (page 2, dernière ligne). Orange Money montre <b>2 870 $</b> : la différence vient sans doute des espèces. J'inscris 3 150 $ et je note « 280 $ en espèces ». C'est juste ?</span>
             <div style="display:flex;gap:6px;margin-top:8px"><button class="chip" data-toast="Réponse enregistrée : 3 150 $, dont 280 $ en espèces" data-toast-en="Answer saved: 3,150 $, including 280 $ in cash"><i data-lucide="check" class="i i-xs"></i><span data-en="Yes, that's right">Oui, c'est juste</span></button><button class="chip" data-toast="Corrigez le montant à l'écrit ou à la voix" data-toast-en="Correct the amount in writing or by voice"><span data-en="Correct">Corriger</span></button></div>
           </div>
         </div>
-        <div class="composer"><button class="cbtn" style="background:var(--soft)" data-toast="Photo ou fichier : appareil photo, galerie, documents" data-toast-en="Photo or file: camera, gallery, documents"><i data-lucide="paperclip" class="i"></i></button><div class="f" data-en="Write or speak…">Écrivez ou parlez…</div><button class="cbtn" style="background:var(--blue);color:#fff" data-toast="Parlez : l'assistant vous écoute" data-toast-en="Speak: the assistant is listening"><i data-lucide="mic" class="i"></i></button></div>
+        <div class="composer"><button class="cbtn" style="background:var(--soft)" data-toast="Photo ou fichier : appareil photo, galerie, documents" data-toast-en="Photo or file: camera, gallery, documents"><i data-lucide="paperclip" class="i"></i></button><div class="f" data-en="Write or speak…">Écrivez ou parlez…</div><button class="cbtn" style="background:var(--xb);color:#fff" data-toast="Parlez : l'assistant vous écoute" data-toast-en="Speak: the assistant is listening"><i data-lucide="mic" class="i"></i></button></div>
       </div></div>
       <div class="ph-label" data-en="Questions, voice, photos of proof">Questions, voix, photos des preuves</div>
     </div>
-
     <div>
       <div class="phone"><div class="scr">
         <div class="ph-status"><span>09:52</span><span>3G ▂▄</span></div>
-        <div class="ph-bar"><a href="#1" style="color:#fff"><i data-lucide="arrow-left" class="i"></i></a><span class="t" data-en="Before sending">Avant d'envoyer</span></div>
+        <div class="ph-bar"><a href="#1"><i data-lucide="arrow-left" class="i"></i></a><span class="t" data-en="Before sending">Avant d'envoyer</span></div>
         <div class="ph-body">
           <div class="vcard" style="margin-top:0">
-            <b class="exo" data-en="Your P1.01 diagnostic is ready">Votre diagnostic P1.01 est prêt</b>
+            <b class="nu" style="color:var(--navy)" data-en="Your P1.01 diagnostic is ready">Votre diagnostic P1.01 est prêt</b>
             <div class="small muted" style="margin-top:2px" data-en="9 answers · 2 documents attached">9 réponses · 2 pièces jointes</div>
             <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:13px">
               <div style="display:flex;justify-content:space-between"><span class="muted" data-en="Stage">Stade</span><b data-en="First sales">Premières ventes</b></div>
@@ -464,11 +638,11 @@ table.g tr.blk td{background:#FFF6F8}
   </div>
 </section>
 
-<!-- ============ 3. PREUVES ============ -->
-<section class="screen" id="s3">
+<!-- ================= 5. PREUVES ================= -->
+<section class="screen" id="s5">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">3</span><span data-en="The proof checker's feedback, then the human decision">Le retour du vérificateur de preuves, puis la décision humaine</span></h2>
+      <h2><span class="s-num">5</span><span data-en="The proof checker's feedback, then the human decision">Le retour du vérificateur de preuves, puis la décision humaine</span></h2>
       <p data-en="The checker proposes a verdict per criterion and quotes the exact passage of the document. The reviewer accepts, edits or rejects, gives her reasons in writing and asks for a correction plan.">Le vérificateur propose un verdict par critère et cite le passage exact de la pièce. La personne de référence accepte, modifie ou écarte, motive par écrit et demande un plan correctif.</p>
     </div>
     <div class="tags"><span class="tag">R3 · R8 · B4</span><span class="tag" data-en="Demo scenarios 2 and 3">Scénarios de démo 2 et 3</span></div>
@@ -477,9 +651,9 @@ table.g tr.blk td{background:#FFF6F8}
     <div>
       <div class="phone"><div class="scr">
         <div class="ph-status"><span>09:53</span><span>3G ▂▄</span></div>
-        <div class="ph-bar"><a href="#1" style="color:#fff"><i data-lucide="arrow-left" class="i"></i></a><span class="t" data-en="P1.01 · first feedback">P1.01 · premier retour</span></div>
+        <div class="ph-bar"><a href="#1"><i data-lucide="arrow-left" class="i"></i></a><svg width="24" height="24"><use href="#mboka"/></svg><span class="t" data-en="P1.01 · first feedback">P1.01 · premier retour</span></div>
         <div class="ph-body" style="padding:12px">
-          <div class="vcard" style="margin:0 0 10px">
+          <div class="vcard aicard" style="margin:0 0 10px">
             <div class="who-ai"><i data-lucide="scan-search" class="i i-xs"></i><span data-en="Proof checker · proposal">Vérificateur de preuves · proposition</span></div>
             <div class="small" style="line-height:1.45" data-en="3 criteria out of 5 are backed by your documents. 1 gap to explain, 1 document missing. Nadine will decide by 11 Dec.">3 critères sur 5 sont appuyés par vos pièces. 1 écart à expliquer, 1 pièce manquante. Nadine décide d'ici le 11 déc.</div>
           </div>
@@ -488,54 +662,45 @@ table.g tr.blk td{background:#FFF6F8}
             <div class="crit"><div class="ic" style="background:var(--amber-l);color:var(--amber)"><i data-lucide="alert-triangle" class="i i-s"></i></div><div><b style="font-size:13px" data-en="Cash collected">Encaissements</b><div class="cite"><b>Orange Money :</b> « Oct. 2 870 $ ». <span data-en="Gap of 280 $ with the notebook, said to be cash: to be justified.">Écart de 280 $ avec le cahier, déclaré en espèces : à justifier.</span></div></div></div>
             <div class="crit"><div class="ic" style="background:var(--red-l);color:var(--red)"><i data-lucide="x" class="i i-s"></i></div><div><b style="font-size:13px" data-en="Customer list">Liste des clients</b><div class="small muted" style="margin-top:4px" data-en="Missing: no document names the 2 restaurants.">Absente : aucune pièce ne nomme les 2 restaurants.</div></div></div>
           </div>
-          <div class="vcard" style="border:2px solid var(--amber);background:#FFFBF0">
+          <div class="vcard" style="border:2px solid var(--gold);background:#FFFBF0">
             <div style="display:flex;gap:6px;align-items:center"><span class="pill p-amber" data-en="To correct">À corriger</span><span class="small muted" data-en="Nadine · 10 Dec.">Nadine · 10 déc.</span></div>
             <div class="small" style="margin-top:6px;line-height:1.45" data-en="“The 280 $ in cash must be backed: a receipt book or a photo of the cash notebook for October.”">« Les 280 $ en espèces doivent être appuyés : carnet de reçus ou photo du cahier de caisse d'octobre. »</div>
-            <button class="btn btn-y" style="margin-top:8px;padding:8px 12px;font-size:13px" data-toast="Plan correctif : déposez le cahier de caisse, puis soumettez à nouveau" data-toast-en="Correction plan: upload the cash notebook, then submit again"><i data-lucide="upload" class="i i-s"></i><span data-en="Add the correction plan">Déposer le plan correctif</span></button>
+            <button class="btn btn-g" style="margin-top:8px;padding:8px 12px;font-size:13px" data-toast="Plan correctif : déposez le cahier de caisse, puis soumettez à nouveau" data-toast-en="Correction plan: upload the cash notebook, then submit again"><i data-lucide="upload" class="i i-s"></i><span data-en="Add the correction plan">Déposer le plan correctif</span></button>
           </div>
         </div>
       </div></div>
       <div class="ph-label" data-en="What the entrepreneur sees">Ce que voit l'entrepreneure</div>
     </div>
-
     <div class="app">
-      <div class="app-top"><img src="logo-silikin.svg" alt=""><span class="prog">Xelle · Venture Builder</span><span class="sp"></span><div class="who"><span data-en="Reviewer">Personne de référence</span><span class="av" style="background:#0B2F55">NA</span></div></div>
-      <div class="app-body">
-        <aside class="side">
-          <a href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a>
-          <a class="on" href="#3"><i data-lucide="file-check-2" class="i"></i><span data-en="Reviews">Revues</span><span class="pill p-red" style="margin-left:auto;padding:1px 7px">4</span></a>
-          <a href="#4"><i data-lucide="flag" class="i"></i><span data-en="Milestones">Jalons</span></a>
-          <a href="#5"><i data-lucide="layout-dashboard" class="i"></i><span data-en="Dashboard">Tableau de bord</span></a>
-        </aside>
-        <div class="main">
-          <div class="crumb"><span data-en="Reviews">Revues</span> › Mboka Farm › P1.01</div>
-          <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><h3>P1.01 · Diagnostic</h3><p class="sub" data-en="Submitted on 9 Dec. at 09:53 · review due 11 Dec. (2 days)">Soumise le 9 déc. à 09:53 · revue due le 11 déc. (2 jours)</p></div><span class="pill p-blue"><i data-lucide="clock-3" class="i i-xs"></i><span data-en="Escalation if not reviewed on 11 Dec.">Escalade si non revue le 11 déc.</span></span></div>
-          <div class="status5"><div class="d" data-en="Draft">Brouillon</div><div class="d" data-en="Submitted">Soumise</div><div class="d" data-en="Under review">En revue</div><div class="c" data-en="To correct">À corriger</div><div data-en="Validated">Validée</div></div>
-          <div class="row" style="margin-top:16px">
-            <div style="width:300px;flex-shrink:0">
-              <div class="small" style="font-weight:700;margin-bottom:6px" data-en="Documents, with the cited passages">Pièces, avec les passages cités</div>
-              <div class="doc"><div class="nb" style="height:200px;font-size:17px;line-height:20px;background:repeating-linear-gradient(180deg,#FFFDF5 0 19px,#C9D9EE 19px 20px);padding-left:22px">Octobre 2026<br>02 · Gombe ……… 85$<br>05 · Ma Campagne … 120$<br>09 · Limete ……… 64$<br>…<br>30 · Bandal ……… 96$<br><b>Total ………… 3 150$</b></div><div class="hl" style="left:14px;right:40px;top:122px;height:26px"><span data-en="Criterion 1">Critère 1</span></div></div>
-              <div class="doc" style="margin-top:10px"><div class="om" style="font-size:12px;padding:10px"><div class="h" style="font-size:12px;padding:4px 7px">Orange Money · relevé octobre</div><div class="l"><span>03/10 · reçu</span><span>+120 $</span></div><div class="l"><span>05/10 · reçu</span><span>+85 $</span></div><div class="l"><span>12/10 · reçu</span><span>+210 $</span></div><div class="l"><span>…</span><span></span></div><div class="l"><b>Total reçu</b><b>2 870 $</b></div></div><div class="hl w" style="left:6px;right:6px;bottom:6px;height:24px"><span data-en="Criterion 2">Critère 2</span></div></div>
+      <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a class="on" href="#5"><i data-lucide="file-check-2" class="i i-s"></i><span data-en="Reviews">Revues</span><span class="pill p-red" style="padding:1px 7px">4</span></a><a href="#6"><i data-lucide="flag" class="i i-s"></i><span data-en="Milestones">Jalons</span></a></div><span class="sp"></span><div class="who"><span data-en="Reviewer">Personne de référence</span><span class="av" style="background:var(--navy)">NA</span></div></div>
+      <div class="main">
+        <div class="crumb"><span data-en="Reviews">Revues</span> › <svg width="16" height="16"><use href="#mboka"/></svg> Mboka Farm › P1.01</div>
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap"><div><h3>P1.01 · Diagnostic</h3><p class="sub" data-en="Submitted on 9 Dec. at 09:53 · review due 11 Dec. (2 days)">Soumise le 9 déc. à 09:53 · revue due le 11 déc. (2 jours)</p></div><span class="pill p-blue"><i data-lucide="clock-3" class="i i-xs"></i><span data-en="Escalation if not reviewed on 11 Dec.">Escalade si non revue le 11 déc.</span></span></div>
+        <div class="status5"><div class="d" data-en="Draft">Brouillon</div><div class="d" data-en="Submitted">Soumise</div><div class="d" data-en="Under review">En revue</div><div class="c" data-en="To correct">À corriger</div><div data-en="Validated">Validée</div></div>
+        <div class="row" style="margin-top:16px">
+          <div style="width:290px;flex-shrink:0" class="w300">
+            <div class="small" style="font-weight:700;margin-bottom:6px" data-en="Documents, with the cited passages">Pièces, avec les passages cités</div>
+            <div class="doc"><div class="nb" style="height:200px;font-size:17px;line-height:20px;background:repeating-linear-gradient(180deg,#FFFDF5 0 19px,#C9D9EE 19px 20px);padding-left:22px">Octobre 2026<br>02 · Gombe ……… 85$<br>05 · Ma Campagne … 120$<br>09 · Limete ……… 64$<br>…<br>30 · Bandal ……… 96$<br><b>Total ………… 3 150$</b></div><div class="hl" style="left:14px;right:40px;top:122px;height:26px"><span data-en="Criterion 1">Critère 1</span></div></div>
+            <div class="doc" style="margin-top:10px"><div class="om" style="font-size:12px;padding:10px"><div class="h" style="font-size:12px;padding:4px 7px">Orange Money · relevé octobre</div><div class="l"><span>03/10 · reçu</span><span>+120 $</span></div><div class="l"><span>05/10 · reçu</span><span>+85 $</span></div><div class="l"><span>12/10 · reçu</span><span>+210 $</span></div><div class="l"><span>…</span><span></span></div><div class="l"><b>Total reçu</b><b>2 870 $</b></div></div><div class="hl w" style="left:6px;right:6px;bottom:6px;height:24px"><span data-en="Criterion 2">Critère 2</span></div></div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div class="card aicard">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span class="ai"><i data-lucide="scan-search" class="i i-xs"></i><span data-en="Proof checker · proposal">Vérificateur de preuves · proposition</span></span><span class="small muted" data-en="9 Dec. 09:54 · logged">9 déc. 09:54 · journalisé</span></div>
+              <div class="tbl"><table class="g" style="margin-top:8px">
+                <tr><th data-en="Criterion">Critère</th><th data-en="Proposal">Proposition</th><th data-en="Decision">Décision</th></tr>
+                <tr><td data-en="1. Sales over 3 months">1. Ventes sur 3 mois</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green" data-en="Accepted">Acceptée</span></td></tr>
+                <tr><td data-en="2. Cash collected">2. Encaissements</td><td><span class="pill p-amber" data-en="Gap 280 $">Écart 280 $</span></td><td><span class="pill p-red" data-en="Refused, with reasons">Refusé, motivé</span></td></tr>
+                <tr><td data-en="3. Team">3. Équipe</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green" data-en="Accepted">Acceptée</span></td></tr>
+                <tr><td data-en="4. Customer list">4. Liste des clients</td><td><span class="pill p-red" data-en="Missing">Absente</span></td><td><span class="pill p-grey" data-en="Edited: “later”">Modifiée : « plus tard »</span></td></tr>
+                <tr><td data-en="5. Cash position">5. Trésorerie</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green" data-en="Accepted">Acceptée</span></td></tr>
+              </table></div>
             </div>
-            <div style="flex:1;min-width:0">
-              <div class="card" style="border-color:#D9CCFF;background:#FBF9FF">
-                <div style="display:flex;justify-content:space-between;align-items:center"><span class="ai"><i data-lucide="scan-search" class="i i-xs"></i><span data-en="Proof checker · proposal">Vérificateur de preuves · proposition</span></span><span class="small muted" data-en="9 Dec. 09:54 · logged">9 déc. 09:54 · journalisé</span></div>
-                <div class="tbl"><table class="g" style="margin-top:8px">
-                  <tr><th data-en="Criterion">Critère</th><th data-en="Proposal">Proposition</th><th data-en="Decision">Décision</th></tr>
-                  <tr><td data-en="1. Sales over 3 months">1. Ventes sur 3 mois</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green"><i data-lucide="check" class="i i-xs"></i><span data-en="Accepted">Acceptée</span></span></td></tr>
-                  <tr><td data-en="2. Cash collected">2. Encaissements</td><td><span class="pill p-amber" data-en="Gap 280 $">Écart 280 $</span></td><td><span class="pill p-red"><i data-lucide="x" class="i i-xs"></i><span data-en="Refused, with reasons">Refusé, motivé</span></span></td></tr>
-                  <tr><td data-en="3. Team">3. Équipe</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green"><i data-lucide="check" class="i i-xs"></i><span data-en="Accepted">Acceptée</span></span></td></tr>
-                  <tr><td data-en="4. Customer list">4. Liste des clients</td><td><span class="pill p-red" data-en="Missing">Absente</span></td><td><span class="pill p-grey" data-en="Edited: “later”">Modifiée : « plus tard »</span></td></tr>
-                  <tr><td data-en="5. Cash position">5. Trésorerie</td><td><span class="pill p-green" data-en="Met">Satisfait</span></td><td><span class="pill p-green"><i data-lucide="check" class="i i-xs"></i><span data-en="Accepted">Acceptée</span></span></td></tr>
-                </table></div>
-              </div>
-              <div class="card" style="margin-top:12px">
-                <div class="small" style="font-weight:700;margin-bottom:6px" data-en="Written reason for refusing criterion 2 (required)">Motif écrit du refus du critère 2 (obligatoire)</div>
-                <textarea class="mot" data-en-ph>Les 280 $ en espèces doivent être appuyés : carnet de reçus ou photo du cahier de caisse d'octobre.</textarea>
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px;flex-wrap:wrap">
-                  <div class="small muted" style="display:flex;gap:6px;align-items:center"><span class="av" style="background:#14915A;width:24px;height:24px;font-size:10px">JM</span><span data-en="Expert's opinion (finance): “The gap is plausible, ask for the cash notebook.”">Avis de l'expert (finance) : « L'écart est plausible, demander le cahier de caisse. »</span></div>
-                  <div class="dec"><button class="btn btn-o" data-toast="Toutes les propositions acceptées : à vous de confirmer critère par critère" data-toast-en="All proposals accepted: confirm criterion by criterion"><span data-en="Accept all">Tout accepter</span></button><button class="btn btn-y" data-toast="Envoyé à Mboka Farm : « À corriger », plan correctif demandé, décision journalisée" data-toast-en="Sent to Mboka Farm: “To correct”, correction plan requested, decision logged"><i data-lucide="corner-up-left" class="i i-s"></i><span data-en="Send back for correction">Renvoyer à corriger</span></button></div>
-                </div>
+            <div class="card" style="margin-top:12px">
+              <div class="small" style="font-weight:700;margin-bottom:6px" data-en="Written reason for refusing criterion 2 (required)">Motif écrit du refus du critère 2 (obligatoire)</div>
+              <textarea class="mot">Les 280 $ en espèces doivent être appuyés : carnet de reçus ou photo du cahier de caisse d'octobre.</textarea>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px;flex-wrap:wrap">
+                <div class="small muted" style="display:flex;gap:6px;align-items:center"><span class="av" style="background:#14915A;width:24px;height:24px;font-size:10px">JM</span><span data-en="Expert's opinion (finance): “The gap is plausible, ask for the cash notebook.”">Avis de l'expert (finance) : « L'écart est plausible, demander le cahier de caisse. »</span></div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-o" data-toast="Confirmez critère par critère" data-toast-en="Confirm criterion by criterion"><span data-en="Accept all">Tout accepter</span></button><button class="btn btn-g" data-toast="Envoyé à Mboka Farm : « À corriger », plan correctif demandé, décision journalisée" data-toast-en="Sent to Mboka Farm: “To correct”, correction plan requested, decision logged"><i data-lucide="corner-up-left" class="i i-s"></i><span data-en="Send back for correction">Renvoyer à corriger</span></button></div>
               </div>
             </div>
           </div>
@@ -545,78 +710,70 @@ table.g tr.blk td{background:#FFF6F8}
   </div>
 </section>
 
-<!-- ============ 4. JALON 1 ============ -->
-<section class="screen" id="s4">
+<!-- ================= 6. JALON ================= -->
+<section class="screen" id="s6">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">4</span><span data-en="Milestone 1: two evaluators, one decision, the minutes">Jalon 1 : deux évaluateurs, une décision, le procès-verbal</span></h2>
-      <p data-en="The team module checks the file first. Then two evaluators score on their own; the platform flags the gap, applies the blocking criterion and the programme's decision rule, and produces the minutes.">Le module équipe vérifie d'abord le dossier. Puis deux évaluateurs notent chacun de leur côté ; la plateforme signale l'écart, applique le critère bloquant et la règle de décision du programme, et produit le procès-verbal.</p>
+      <h2><span class="s-num">6</span><span data-en="Milestone 1: two evaluators, one decision, the minutes">Jalon 1 : deux évaluateurs, une décision, le procès-verbal</span></h2>
+      <p data-en="The team module checks the file first. Then two evaluators score on their own; the platform flags the gap, applies the blocking criterion and the programme's rule, and produces the minutes.">Le module équipe vérifie d'abord le dossier. Puis deux évaluateurs notent chacun de leur côté ; la plateforme signale l'écart, applique le critère bloquant et la règle du programme, et produit le procès-verbal.</p>
     </div>
     <div class="tags"><span class="tag">R4 · C2</span><span class="tag" data-en="Demo scenario 6">Scénario de démo 6</span></div>
   </div>
   <div class="app">
-    <div class="app-top"><img src="logo-silikin.svg" alt=""><span class="prog">Xelle · Venture Builder</span><span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:#F2295B">NK</span></div></div>
-    <div class="app-body">
-      <aside class="side">
-        <a href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a>
-        <a href="#3"><i data-lucide="file-check-2" class="i"></i><span data-en="Reviews">Revues</span></a>
-        <a class="on" href="#4"><i data-lucide="flag" class="i"></i><span data-en="Milestones">Jalons</span></a>
-        <a href="#5"><i data-lucide="layout-dashboard" class="i"></i><span data-en="Dashboard">Tableau de bord</span></a>
-        <a href="#6"><i data-lucide="shield-check" class="i"></i><span data-en="AI and trust">IA et confiance</span></a>
-      </aside>
-      <div class="main">
-        <div class="crumb"><span data-en="Milestones">Jalons</span> › Mboka Farm › <span data-en="Milestone 1">Jalon 1</span></div>
-        <h3 data-en="Mboka Farm · Milestone 1 · end of phase 1">Mboka Farm · Jalon 1 · fin de la phase 1</h3>
-        <p class="sub" data-en="Session of 2 Feb. 2027 · decides on tranche 2">Séance du 2 février 2027 · décide de la tranche 2</p>
-
-        <div class="tr" style="margin:16px 0 18px">
-          <div class="seg" style="background:var(--blue);color:#fff"><span>① <span data-en="Pre-milestone check">Vérification avant jalon</span></span></div><i data-lucide="chevron-right" class="i" style="color:var(--blue)"></i>
-          <div class="seg" style="background:var(--blue);color:#fff"><span>② <span data-en="Two scores">Deux notations</span></span></div><i data-lucide="chevron-right" class="i" style="color:var(--blue)"></i>
-          <div class="seg" style="background:var(--yellow);color:var(--ink)"><span>③ <span data-en="Decision">Décision</span></span></div><i data-lucide="chevron-right" class="i" style="color:#9FB3C8"></i>
-          <div class="seg" style="background:var(--soft);color:var(--ink3);border:1px dashed #B9C9DB"><span>④ <span data-en="Minutes and targets">PV et cibles</span></span></div>
-        </div>
-
-        <div class="row">
-          <div style="width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:12px">
-            <div class="card" style="border-color:#D9CCFF;background:#FBF9FF">
-              <span class="ai"><i data-lucide="users" class="i i-xs"></i><span data-en="Team module · check 10 days before">Module équipe · vérification J-10</span></span>
-              <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;font-size:13px">
-                <div style="display:flex;gap:8px"><i data-lucide="check-circle-2" class="i i-s" style="color:var(--green)"></i><span data-en="8 of 8 phase 1 deliverables validated">8 livrables sur 8 de la phase 1 validés</span></div>
-                <div style="display:flex;gap:8px"><i data-lucide="alert-triangle" class="i i-s" style="color:var(--amber)"></i><span data-en="Blocking criterion at risk: “sales traceability” (cash 9 % of sales, partly unbacked)">Critère bloquant à risque : « traçabilité des ventes » (espèces 9 % des ventes, en partie non appuyées)</span></div>
-                <div style="display:flex;gap:8px"><i data-lucide="alert-triangle" class="i i-s" style="color:var(--amber)"></i><span data-en="December sales declared 3,400 $, statement 2,950 $">Ventes de décembre déclarées 3 400 $, relevé 2 950 $</span></div>
-              </div>
-              <div class="small muted" style="margin-top:10px" data-en="Proposal only. The evaluators decide.">Proposition seulement. Les évaluateurs décident.</div>
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#5"><i data-lucide="file-check-2" class="i i-s"></i><span data-en="Reviews">Revues</span></a><a class="on" href="#6"><i data-lucide="flag" class="i i-s"></i><span data-en="Milestones">Jalons</span></a><a href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a></div><span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:var(--xb-d)">NK</span></div></div>
+    <div class="main">
+      <div class="crumb"><span data-en="Milestones">Jalons</span> › <svg width="16" height="16"><use href="#mboka"/></svg> Mboka Farm › <span data-en="Milestone 1">Jalon 1</span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-end">
+        <div><h3 data-en="Mboka Farm · Milestone 1 · end of phase 1">Mboka Farm · Jalon 1 · fin de la phase 1</h3><p class="sub" data-en="Session of 2 Feb. 2027 · decides on tranche 2">Séance du 2 février 2027 · décide de la tranche 2</p></div>
+        <div style="display:flex;gap:6px"><span class="pill p-gold">J1 · <span data-en="tranche 2">tranche 2</span></span><span class="pill p-grey">J2 · <span data-en="tranche 3">tranche 3</span></span><span class="pill p-grey">J3 · <span data-en="final">finale</span></span></div>
+      </div>
+      <div class="flow" style="margin:16px 0 18px">
+        <div class="seg" style="background:var(--xb);color:#fff"><span>① <span data-en="Check 10 days before">Vérification J-10</span></span></div><i data-lucide="chevron-right" class="i" style="color:var(--xb)"></i>
+        <div class="seg" style="background:var(--xb);color:#fff"><span>② <span data-en="Two scores">Deux notations</span></span></div><i data-lucide="chevron-right" class="i" style="color:var(--xb)"></i>
+        <div class="seg" style="background:var(--gold);color:var(--ink)"><span>③ <span data-en="Decision">Décision</span></span></div><i data-lucide="chevron-right" class="i" style="color:#AFC0D8"></i>
+        <div class="seg" style="background:var(--soft);color:var(--ink3);border:1px dashed #B9C6DA"><span>④ <span data-en="Minutes and targets">PV et cibles</span></span></div><i data-lucide="chevron-right" class="i" style="color:#AFC0D8"></i>
+        <div class="seg" style="background:var(--soft);color:var(--ink3);border:1px dashed #B9C6DA"><span>⑤ <span data-en="Tranche paid">Tranche versée</span></span></div>
+      </div>
+      <div class="row">
+        <div style="width:300px;flex-shrink:0" class="w300 col">
+          <div class="card aicard">
+            <span class="ai"><i data-lucide="users" class="i i-xs"></i><span data-en="Team module · check 10 days before">Module équipe · vérification J-10</span></span>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;font-size:13px">
+              <div style="display:flex;gap:8px"><i data-lucide="check-circle-2" class="i i-s" style="color:var(--green)"></i><span data-en="8 of 8 phase 1 deliverables validated">8 livrables sur 8 de la phase 1 validés</span></div>
+              <div style="display:flex;gap:8px"><i data-lucide="alert-triangle" class="i i-s" style="color:var(--amber)"></i><span data-en="Blocking criterion at risk: sales traceability (cash 9 % of sales, partly unbacked)">Critère bloquant à risque : traçabilité des ventes (espèces 9 % des ventes, en partie non appuyées)</span></div>
+              <div style="display:flex;gap:8px"><i data-lucide="alert-triangle" class="i i-s" style="color:var(--amber)"></i><span data-en="December sales declared 3,400 $, statement 2,950 $">Ventes de décembre déclarées 3 400 $, relevé 2 950 $</span></div>
             </div>
-            <div class="card">
-              <div class="small muted" style="font-weight:700" data-en="Score">Note</div>
-              <div style="display:flex;align-items:baseline;gap:6px"><span class="score">63</span><span class="muted">/ 100</span></div>
-              <div class="gauge"><i style="width:63%"></i><b style="left:60%"></b></div>
-              <div class="small muted" data-en="Threshold 60 · average of the two evaluators">Seuil 60 · moyenne des deux évaluateurs</div>
-            </div>
+            <div class="small muted" style="margin-top:10px" data-en="Proposal only. The evaluators decide.">Proposition seulement. Les évaluateurs décident.</div>
           </div>
-          <div style="flex:1;min-width:0">
-            <div class="card tbl" style="padding:6px 6px 0">
-              <table class="g">
-                <tr><th data-en="Criterion">Critère</th><th style="text-align:center" data-en="Weight">Poids</th><th style="text-align:center" data-en="Evaluator 1">Évaluateur 1</th><th style="text-align:center" data-en="Evaluator 2">Évaluateur 2</th><th style="text-align:center" data-en="Gap">Écart</th><th style="text-align:center" data-en="Weighted">Pondéré</th></tr>
-                <tr><td data-en="Deliverables of phase 1">Livrables de la phase 1</td><td class="n">25</td><td class="n">8</td><td class="n">7</td><td class="n">1</td><td class="n">18,8</td></tr>
-                <tr><td data-en="Sales and growth">Ventes et croissance</td><td class="n">20</td><td class="n">7</td><td class="n">6</td><td class="n">1</td><td class="n">13,0</td></tr>
-                <tr class="blk"><td><b data-en="Sales traceability">Traçabilité des ventes</b> <span class="pill p-red" style="margin-left:4px" data-en="Blocking">Bloquant</span></td><td class="n">20</td><td class="n" style="color:var(--red)">3</td><td class="n" style="color:var(--red)">3</td><td class="n">0</td><td class="n">6,0</td></tr>
-                <tr><td data-en="Cash position">Trésorerie</td><td class="n">15</td><td class="n">7</td><td class="n">7</td><td class="n">0</td><td class="n">10,5</td></tr>
-                <tr><td data-en="Team and engagement">Équipe et engagement</td><td class="n">20</td><td class="n">9</td><td class="n">6</td><td class="n" style="color:var(--amber)">3 <i data-lucide="alert-triangle" class="i i-xs"></i></td><td class="n">15,0</td></tr>
-                <tr><td colspan="5" style="font-weight:700" data-en="Total (average)">Total (moyenne)</td><td class="n" style="font-size:16px">63</td></tr>
-              </table>
-              <div class="small" style="padding:10px;color:var(--amber);display:flex;gap:6px;align-items:center"><i data-lucide="alert-triangle" class="i i-s"></i><span data-en="Gap of 3 points on “Team and engagement”: above the threshold of 2, the evaluators talk before the decision.">Écart de 3 points sur « Équipe et engagement » : au-dessus du seuil de 2, les évaluateurs échangent avant la décision.</span></div>
+          <div class="card">
+            <div class="small muted" style="font-weight:700" data-en="Score">Note</div>
+            <div style="display:flex;align-items:baseline;gap:6px"><span class="score">63</span><span class="muted">/ 100</span></div>
+            <div class="gauge"><i style="width:63%"></i><b style="left:60%"></b></div>
+            <div class="small muted" data-en="Threshold 60 · average of the two evaluators">Seuil 60 · moyenne des deux évaluateurs</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div class="card tbl" style="padding:6px 6px 0">
+            <table class="g">
+              <tr><th data-en="Criterion">Critère</th><th style="text-align:center" data-en="Weight">Poids</th><th style="text-align:center" data-en="Evaluator 1">Évaluateur 1</th><th style="text-align:center" data-en="Evaluator 2">Évaluateur 2</th><th style="text-align:center" data-en="Gap">Écart</th><th style="text-align:center" data-en="Weighted">Pondéré</th></tr>
+              <tr><td data-en="Deliverables of phase 1">Livrables de la phase 1</td><td class="n">25</td><td class="n">8</td><td class="n">7</td><td class="n">1</td><td class="n">18,8</td></tr>
+              <tr><td data-en="Sales and growth">Ventes et croissance</td><td class="n">20</td><td class="n">7</td><td class="n">6</td><td class="n">1</td><td class="n">13,0</td></tr>
+              <tr class="blk"><td><b data-en="Sales traceability">Traçabilité des ventes</b> <span class="pill p-red" style="margin-left:4px" data-en="Blocking">Bloquant</span></td><td class="n">20</td><td class="n" style="color:var(--red)">3</td><td class="n" style="color:var(--red)">3</td><td class="n">0</td><td class="n">6,0</td></tr>
+              <tr><td data-en="Cash position">Trésorerie</td><td class="n">15</td><td class="n">7</td><td class="n">7</td><td class="n">0</td><td class="n">10,5</td></tr>
+              <tr><td data-en="Team and engagement">Équipe et engagement</td><td class="n">20</td><td class="n">9</td><td class="n">6</td><td class="n" style="color:var(--amber)">3 !</td><td class="n">15,0</td></tr>
+              <tr><td colspan="5" style="font-weight:700" data-en="Total (average)">Total (moyenne)</td><td class="n" style="font-size:16px">63</td></tr>
+            </table>
+            <div class="small" style="padding:10px;color:var(--amber);display:flex;gap:6px;align-items:center"><i data-lucide="alert-triangle" class="i i-s"></i><span data-en="Gap of 3 points on “Team and engagement”: above the threshold of 2, the evaluators talk before the decision.">Écart de 3 points sur « Équipe et engagement » : au-dessus du seuil de 2, les évaluateurs échangent avant la décision.</span></div>
+          </div>
+          <div class="card" style="margin-top:12px;border:2px solid var(--gold);background:#FFFCF2">
+            <div class="small muted" style="font-weight:700" data-en="Programme rule applied">Règle du programme appliquée</div>
+            <div class="small" style="margin:4px 0 10px" data-en="Score ≥ 60 but one blocking criterion below 5 → 50 % of the tranche now, balance under conditions.">Note ≥ 60 mais un critère bloquant sous 5 → 50 % de la tranche maintenant, solde sous conditions.</div>
+            <div class="nu" style="font-size:21px;font-weight:900;color:var(--navy)" data-en="Decision: 50 % of tranche 2, balance under conditions">Décision : 50 % de la tranche 2, solde sous conditions</div>
+            <div style="display:flex;gap:18px;margin-top:10px;flex-wrap:wrap;font-size:13px">
+              <div><b data-en="Conditions for the balance">Conditions du solde</b><br><span data-en="1. Cash receipt book from March">1. Carnet de reçus des espèces dès mars</span><br><span data-en="2. Sales traceability ≥ 5 at milestone 2">2. Traçabilité des ventes ≥ 5 au jalon 2</span></div>
+              <div><b data-en="Targets validated M3 to M6">Cibles validées M3 à M6</b><br><span data-en="Sales: 3,600 · 4,000 · 4,400 · 4,800 $">Ventes : 3 600 · 4 000 · 4 400 · 4 800 $</span><br><span data-en="Cash runway: ≥ 2 months">Autonomie de trésorerie : ≥ 2 mois</span></div>
             </div>
-            <div class="card" style="margin-top:12px;border:2px solid var(--yellow);background:#FFFDE8">
-              <div class="small muted" style="font-weight:700" data-en="Programme rule applied">Règle du programme appliquée</div>
-              <div class="small" style="margin:4px 0 10px" data-en="Score ≥ 60 but one blocking criterion below 5 → 50 % of the tranche now, balance under conditions.">Note ≥ 60 mais un critère bloquant sous 5 → 50 % de la tranche maintenant, solde sous conditions.</div>
-              <div class="exo" style="font-size:20px;font-weight:800" data-en="Decision: 50 % of tranche 2, balance under conditions">Décision : 50 % de la tranche 2, solde sous conditions</div>
-              <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;font-size:13px">
-                <div><b data-en="Conditions for the balance">Conditions du solde</b><br><span data-en="1. Cash receipt book from March">1. Carnet de reçus des espèces dès mars</span><br><span data-en="2. Sales traceability ≥ 5 at milestone 2">2. Traçabilité des ventes ≥ 5 au jalon 2</span></div>
-                <div><b data-en="Targets validated M3 to M6">Cibles validées M3 à M6</b><br><span data-en="Sales: 3,600 · 4,000 · 4,400 · 4,800 $">Ventes : 3 600 · 4 000 · 4 400 · 4 800 $</span><br><span data-en="Cash runway: ≥ 2 months">Autonomie de trésorerie : ≥ 2 mois</span></div>
-              </div>
-              <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn btn-p" data-modal="pv"><i data-lucide="file-signature" class="i i-s"></i><span data-en="Produce the minutes">Produire le procès-verbal</span></button><button class="btn btn-o" data-toast="Décision enregistrée, signée par les deux évaluateurs et la directrice" data-toast-en="Decision recorded, signed by both evaluators and the director"><span data-en="Validate the decision">Valider la décision</span></button></div>
-            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn btn-p" data-modal="pv"><i data-lucide="file-signature" class="i i-s"></i><span data-en="Produce the minutes">Produire le procès-verbal</span></button><button class="btn btn-o" data-toast="Décision enregistrée, signée par les deux évaluateurs et la directrice" data-toast-en="Decision recorded, signed by both evaluators and the director"><span data-en="Validate the decision">Valider la décision</span></button></div>
           </div>
         </div>
       </div>
@@ -624,133 +781,210 @@ table.g tr.blk td{background:#FFF6F8}
   </div>
 </section>
 
-<!-- ============ 5. TABLEAU DE BORD ============ -->
-<section class="screen" id="s5">
+<!-- ================= 7. TABLEAU DE BORD ================= -->
+<section class="screen" id="s7">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">5</span><span data-en="Monthly dashboard: one company, the whole portfolio">Tableau de bord mensuel : une entreprise, tout le portefeuille</span></h2>
+      <h2><span class="s-num">7</span><span data-en="Monthly dashboard: one company, the whole portfolio">Tableau de bord mensuel : une entreprise, tout le portefeuille</span></h2>
       <p data-en="The entrepreneur enters her monthly figures on her phone. The platform calculates the cash runway and sends a red alert to the programme director below the threshold. The team module writes the monthly summary.">L'entrepreneure saisit ses chiffres du mois sur son téléphone. La plateforme calcule l'autonomie de trésorerie et envoie une alerte rouge à la directrice des programmes sous le seuil. Le module équipe rédige la synthèse du mois.</p>
     </div>
-    <div class="tags"><span class="tag">R6 · R10 · C2</span><span class="tag" data-en="Demo scenario 4">Scénario de démo 4</span></div>
+    <div class="tags"><span class="tag">R6 · C2</span><span class="tag" data-en="Demo scenario 4">Scénario de démo 4</span></div>
   </div>
   <div class="app">
-    <div class="app-top"><img src="logo-silikin.svg" alt=""><span class="prog">Xelle · Venture Builder</span><span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:#F2295B">NK</span></div></div>
-    <div class="app-body">
-      <aside class="side">
-        <a href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a>
-        <a class="on" href="#5"><i data-lucide="layout-dashboard" class="i"></i><span data-en="Dashboard">Tableau de bord</span></a>
-        <a href="#4"><i data-lucide="flag" class="i"></i><span data-en="Milestones">Jalons</span></a>
-        <a href="#6"><i data-lucide="shield-check" class="i"></i><span data-en="AI and trust">IA et confiance</span></a>
-        <div class="grp" data-en="Reports">Rapports</div>
-        <a href="#5" data-toast="Export bailleur : indicateurs du cadre logique, XLSX et PDF" data-toast-en="Donor export: logframe indicators, XLSX and PDF"><i data-lucide="download" class="i"></i><span data-en="Donor export">Export bailleur</span></a>
-      </aside>
-      <div class="main">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap"><div><div class="crumb" data-en="Cohort 1 · January 2027 (M2)">Cohorte 1 · janvier 2027 (M2)</div><h3 data-en="Portfolio">Portefeuille</h3></div><button class="btn btn-o" data-toast="Export bailleur : bénéficiaires accompagnées, emplois, CA, fonds mobilisés (XLSX, PDF)" data-toast-en="Donor export: beneficiaries supported, jobs, revenue, funds raised (XLSX, PDF)"><i data-lucide="download" class="i i-s"></i><span data-en="Donor export">Export bailleur</span></button></div>
-        <div class="pf" style="margin-top:12px">
-          <div class="co sel"><b>Mboka Farm</b><span class="small muted">Agritech</span><div style="margin-top:6px"><span class="pill p-red"><i data-lucide="alert-octagon" class="i i-xs"></i><span data-en="Cash 1.3 months">Trésorerie 1,3 mois</span></span></div></div>
-          <div class="co"><b>Kitoko Pay</b><span class="small muted">Fintech</span><div style="margin-top:6px"><span class="pill p-green" data-en="On track">Dans les temps</span></div></div>
-          <div class="co"><b>Lisanga Santé</b><span class="small muted">Healthtech</span><div style="margin-top:6px"><span class="pill p-amber" data-en="2 tasks late">2 tâches en retard</span></div></div>
-          <div class="co"><b>Mwinda Solar</b><span class="small muted">Cleantech</span><div style="margin-top:6px"><span class="pill p-green" data-en="On track">Dans les temps</span></div></div>
-          <div class="co"><b>Buku Academy</b><span class="small muted">Edtech</span><div style="margin-top:6px"><span class="pill p-grey" data-en="Maternity pause">Pause maternité</span></div></div>
-        </div>
-        <div class="row" style="margin-top:14px">
-          <div class="kpi"><div class="l" data-en="Sales M2">Ventes M2</div><div class="v">2 850 $</div><div class="small" style="color:var(--red)">−11 % vs M1</div></div>
-          <div class="kpi"><div class="l" data-en="Expenses M2">Dépenses M2</div><div class="v">2 300 $</div><div class="small muted" data-en="of which salaries 1,350 $">dont salaires 1 350 $</div></div>
-          <div class="kpi"><div class="l" data-en="Cash at end of month">Trésorerie fin de mois</div><div class="v">3 000 $</div><div class="small muted" data-en="incl. 50 % of tranche 2: no">dont tranche 2 : non</div></div>
-          <div class="kpi alert"><div class="l" style="color:var(--red)" data-en="Cash runway">Autonomie de trésorerie</div><div class="v" style="color:var(--red)" data-en="1.3 months">1,3 mois</div><div class="small" style="color:var(--red)" data-en="Threshold: 2 months · alert sent">Seuil : 2 mois · alerte envoyée</div></div>
-        </div>
-        <div class="row" style="margin-top:14px">
-          <div class="card" style="flex:1">
-            <div style="display:flex;justify-content:space-between"><b class="exo" data-en="Mboka Farm, month by month">Mboka Farm, mois par mois</b><span class="small muted" style="display:flex;gap:12px"><span><span class="dotc" style="background:var(--blue)"></span> <span data-en="Sales">Ventes</span></span><span><span class="dotc" style="background:#9FB3C8"></span> <span data-en="Expenses">Dépenses</span></span></span></div>
-            <div class="chart" style="margin-top:10px">
-              <div class="c"><div class="bb"><i style="height:96%;background:var(--blue)"></i><i style="height:64%;background:#9FB3C8"></i></div><span>M1</span></div>
-              <div class="c"><div class="bb"><i style="height:86%;background:var(--blue)"></i><i style="height:70%;background:#9FB3C8"></i></div><span>M2</span></div>
-              <div class="c"><div class="bb"><i style="height:100%;background:#fff;border:2px dashed var(--blue)"></i><i style="height:0"></i></div><span data-en="M3 target">M3 cible</span></div>
-              <div class="c"><div class="bb"><i style="height:100%;background:#fff;border:2px dashed var(--blue);opacity:.6"></i></div><span data-en="M4 target">M4 cible</span></div>
-            </div>
-            <div class="small muted" style="margin-top:8px" data-en="Entered by Mboka Farm on 3 Feb. from her phone · backed by the Orange Money statement">Saisi par Mboka Farm le 3 févr. depuis son téléphone · appuyé par le relevé Orange Money</div>
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#6"><i data-lucide="flag" class="i i-s"></i><span data-en="Milestones">Jalons</span></a><a class="on" href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a><a href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i><span data-en="Reports">Reporting</span></a></div><span class="sp"></span><div class="who"><span data-en="Programme director">Directrice des programmes</span><span class="av" style="background:var(--xb-d)">NK</span></div></div>
+    <div class="main">
+      <div class="crumb" data-en="Cohort 1 · January 2027 (M2)">Cohorte 1 · janvier 2027 (M2)</div><h3 data-en="Portfolio">Portefeuille</h3>
+      <div class="pf" style="margin-top:12px">
+        <div class="cc sel"><div class="co"><svg width="32" height="32"><use href="#mboka"/></svg><div><b>Mboka Farm</b><span class="small muted">Agritech</span></div></div><div style="margin-top:8px"><span class="pill p-red" data-en="Cash 1.3 months">Trésorerie 1,3 mois</span></div></div>
+        <div class="cc"><div class="co"><span class="co-logo" style="background:#1F4FA0">K</span><div><b>Kitoko Pay</b><span class="small muted">Fintech</span></div></div><div style="margin-top:8px"><span class="pill p-green" data-en="On track">Dans les temps</span></div></div>
+        <div class="cc"><div class="co"><span class="co-logo" style="background:#C2417B">L</span><div><b>Lisanga Santé</b><span class="small muted">Healthtech</span></div></div><div style="margin-top:8px"><span class="pill p-amber" data-en="Engagement level 1">Engagement niveau 1</span></div></div>
+        <div class="cc"><div class="co"><span class="co-logo" style="background:#E08A12">M</span><div><b>Mwinda Solar</b><span class="small muted">Cleantech</span></div></div><div style="margin-top:8px"><span class="pill p-green" data-en="On track">Dans les temps</span></div></div>
+        <div class="cc"><div class="co"><span class="co-logo" style="background:#0E8C8C">B</span><div><b>Buku Academy</b><span class="small muted">Edtech</span></div></div><div style="margin-top:8px"><span class="pill p-grey" data-en="Maternity pause">Pause maternité</span></div></div>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="kpi"><div class="l" data-en="Sales M2">Ventes M2</div><div class="v">2 850 $</div><div class="small" style="color:var(--red)">−11 % vs M1</div></div>
+        <div class="kpi"><div class="l" data-en="Expenses M2">Dépenses M2</div><div class="v">2 300 $</div><div class="small muted" data-en="of which salaries 1,350 $">dont salaires 1 350 $</div></div>
+        <div class="kpi"><div class="l" data-en="Cash at end of month">Trésorerie fin de mois</div><div class="v">3 000 $</div><div class="small muted" data-en="tranche 2 not yet received">tranche 2 pas encore reçue</div></div>
+        <div class="kpi alert"><div class="l" style="color:var(--red)" data-en="Cash runway">Autonomie de trésorerie</div><div class="v" style="color:var(--red)" data-en="1.3 months">1,3 mois</div><div class="small" style="color:var(--red)" data-en="Threshold: 2 months · alert sent">Seuil : 2 mois · alerte envoyée</div></div>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="card" style="flex:1;min-width:0">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px"><span class="ct" data-en="Mboka Farm, month by month">Mboka Farm, mois par mois</span><span class="small muted" style="display:flex;gap:12px"><span><span class="dotc" style="background:var(--xb)"></span> <span data-en="Sales">Ventes</span></span><span><span class="dotc" style="background:#AFC0D8"></span> <span data-en="Expenses">Dépenses</span></span></span></div>
+          <div class="chart" style="margin-top:10px">
+            <div class="c"><div class="bb"><i style="height:96%;background:var(--xb)"></i><i style="height:64%;background:#AFC0D8"></i></div><span>M1</span></div>
+            <div class="c"><div class="bb"><i style="height:86%;background:var(--xb)"></i><i style="height:70%;background:#AFC0D8"></i></div><span>M2</span></div>
+            <div class="c"><div class="bb"><i style="height:100%;background:#fff;border:2px dashed var(--xb)"></i></div><span data-en="M3 target">M3 cible</span></div>
+            <div class="c"><div class="bb"><i style="height:100%;background:#fff;border:2px dashed var(--xb);opacity:.6"></i></div><span data-en="M4 target">M4 cible</span></div>
           </div>
-          <div class="card" style="flex:1;border-color:#D9CCFF;background:#FBF9FF">
-            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ai"><i data-lucide="users" class="i i-xs"></i><span data-en="Team module · January summary">Module équipe · synthèse de janvier</span></span><span class="small muted" data-en="logged">journalisé</span></div>
-            <ul style="margin:10px 0 0;padding-left:18px;font-size:13px;line-height:1.55">
-              <li data-en="Sales down 11 %: 2 restaurant customers paused orders in January (P2.01, customer interviews).">Ventes en baisse de 11 % : 2 restaurants clients ont suspendu leurs commandes en janvier (P2.01, entretiens clients).</li>
-              <li data-en="Cash runway 1.3 months: below the 2-month threshold. The 50 % of tranche 2 is not yet received.">Autonomie de 1,3 mois : sous le seuil de 2 mois. Les 50 % de la tranche 2 ne sont pas encore reçus.</li>
-              <li data-en="Question for the team: bring forward the payment of tranche 2, or a finance expert session this week?">Question pour l'équipe : avancer le versement de la tranche 2, ou une séance avec l'expert finance cette semaine ?</li>
-            </ul>
-            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn btn-p" data-toast="Séance planifiée avec l'expert finance, mercredi 10 h" data-toast-en="Session booked with the finance expert, Wednesday 10:00"><i data-lucide="calendar-plus" class="i i-s"></i><span data-en="Book the expert">Planifier l'expert</span></button><button class="btn btn-o" data-toast="Proposition écartée, raison notée au journal" data-toast-en="Proposal dismissed, reason written in the log"><span data-en="Dismiss">Écarter</span></button></div>
-          </div>
+          <div class="small muted" style="margin-top:8px" data-en="Entered by Mboka Farm on 3 Feb. from her phone · backed by the Orange Money statement">Saisi par Mboka Farm le 3 févr. depuis son téléphone · appuyé par le relevé Orange Money</div>
+        </div>
+        <div class="card aicard" style="flex:1;min-width:0">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="ai"><i data-lucide="users" class="i i-xs"></i><span data-en="Team module · January summary">Module équipe · synthèse de janvier</span></span><span class="small muted" data-en="logged">journalisé</span></div>
+          <ul style="margin:10px 0 0;padding-left:18px;font-size:13px;line-height:1.55">
+            <li data-en="Sales down 11 %: 2 restaurant customers paused orders in January (P2.01, customer interviews).">Ventes en baisse de 11 % : 2 restaurants clients ont suspendu leurs commandes en janvier (P2.01, entretiens clients).</li>
+            <li data-en="Cash runway 1.3 months: below the 2-month threshold. The 50 % of tranche 2 is not yet received.">Autonomie de 1,3 mois : sous le seuil de 2 mois. Les 50 % de la tranche 2 ne sont pas encore reçus.</li>
+            <li data-en="Question for the team: bring forward the payment of tranche 2, or a finance expert session this week?">Question pour l'équipe : avancer le versement de la tranche 2, ou une séance avec l'expert finance cette semaine ?</li>
+          </ul>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn btn-p" data-toast="Séance planifiée avec l'expert finance, mercredi 10 h" data-toast-en="Session booked with the finance expert, Wednesday 10:00"><i data-lucide="calendar-plus" class="i i-s"></i><span data-en="Book the expert">Planifier l'expert</span></button><button class="btn btn-o" data-toast="Proposition écartée, raison notée au journal" data-toast-en="Proposal dismissed, reason written in the log"><span data-en="Dismiss">Écarter</span></button></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. CONFIANCE ============ -->
-<section class="screen" id="s6">
+<!-- ================= 8. REPORTING SILIKIN ================= -->
+<section class="screen" id="s8">
   <div class="s-head">
     <div>
-      <h2><span class="s-num">6</span><span data-en="AI under control: log, consent, instructions, quality">L'IA sous contrôle : journal, consentement, instructions, qualité</span></h2>
+      <h2><span class="s-num">8</span><span data-en="Silikin Village reports: the programme at a glance">Reporting Silikin Village : le programme d'un coup d'œil</span></h2>
+      <p data-en="For the programme team and management: the bimonthly report of each company, the cohort side by side, the experts' time, and all the programmes of the instance. Generated from what is already in the platform.">Pour l'équipe du programme et la direction : le rapport bimestriel de chaque entreprise, la cohorte côte à côte, le temps des experts et tous les programmes de l'instance. Produit à partir de ce qui est déjà dans la plateforme.</p>
+    </div>
+    <div class="tags"><span class="tag">R6 · R7 · R12 · R17</span></div>
+  </div>
+  <div class="app">
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a href="#3"><i data-lucide="building-2" class="i i-s"></i><span data-en="Companies">Entreprises</span></a><a href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a><a class="on" href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i><span data-en="Reports">Reporting</span></a></div><span class="sp"></span><div class="who"><span data-en="Silikin Village management">Direction Silikin Village</span><span class="av" style="background:var(--sv)">SV</span></div></div>
+    <div class="main">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+        <div><div class="crumb"><span data-en="Reports">Reporting</span> › Silikin Village</div><h3 data-en="Xelle · Venture Builder · Dec. 2026 – Jan. 2027">xELLE · Venture Builder · déc. 2026 – janv. 2027</h3></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a href="#9" class="btn btn-o"><i data-lucide="landmark" class="i i-s"></i><span data-en="Donor view">Vue bailleur</span></a><button class="btn btn-p" data-toast="Rapport bimestriel de la cohorte généré (PDF, FR et EN)" data-toast-en="Cohort bimonthly report generated (PDF, FR and EN)"><i data-lucide="file-down" class="i i-s"></i><span data-en="Bimonthly report">Rapport bimestriel</span></button></div>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="kpi"><div class="l" data-en="Programmes on the platform">Programmes sur la plateforme</div><div class="v">3</div><div class="small muted" data-en="Incubation · Acceleration · Venture Builder">Incubation · Accélération · Venture Builder</div></div>
+        <div class="kpi"><div class="l" data-en="Tasks validated (cohort 1)">Tâches validées (cohorte 1)</div><div class="v">49 / 105</div><div class="small muted" data-en="on time: 44">dans les temps : 44</div></div>
+        <div class="kpi"><div class="l" data-en="Average review time">Délai moyen de revue</div><div class="v" data-en="1.6 days">1,6 jour</div><div class="small muted" data-en="target 2 days · 1 escalation">cible 2 jours · 1 escalade</div></div>
+        <div class="kpi"><div class="l" data-en="Expert hours used">Heures d'experts consommées</div><div class="v">86 / 210</div><div class="small muted" data-en="7 domains">7 domaines</div></div>
+      </div>
+      <div class="card tbl" style="margin-top:14px;padding:6px 6px 0">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px"><span class="ct" data-en="Cohort 1, side by side">Cohorte 1, côte à côte</span><span class="small muted" data-en="Click a company for its bimonthly report">Cliquez une entreprise pour son rapport bimestriel</span></div>
+        <table class="g">
+          <tr><th data-en="Company">Entreprise</th><th data-en="Tasks">Tâches</th><th style="text-align:center">J1</th><th data-en="Tranche 2">Tranche 2</th><th data-en="Sales M2 vs M1">Ventes M2 vs M1</th><th data-en="Runway">Autonomie</th><th data-en="Engagement">Engagement</th><th data-en="Bimonthly report">Rapport bimestriel</th></tr>
+          <tr class="sel"><td><div class="co"><svg width="26" height="26"><use href="#mboka"/></svg><b>Mboka Farm</b></div></td><td>11 / 21</td><td class="n">63</td><td><span class="pill p-amber">50 %</span></td><td style="color:var(--red)">−11 %</td><td><span class="pill p-red" data-en="1.3 mo.">1,3 mois</span></td><td><span class="pill p-green" data-en="Level 0">Niveau 0</span></td><td><a href="#3" class="small" style="color:var(--xb);font-weight:700" data-en="Open">Ouvrir</a></td></tr>
+          <tr><td><div class="co"><span class="co-logo" style="background:#1F4FA0;width:26px;height:26px;font-size:12px;border-radius:8px">K</span><b>Kitoko Pay</b></div></td><td>12 / 21</td><td class="n">81</td><td><span class="pill p-green">100 %</span></td><td style="color:var(--green)">+18 %</td><td><span class="pill p-green" data-en="4.2 mo.">4,2 mois</span></td><td><span class="pill p-green" data-en="Level 0">Niveau 0</span></td><td><a href="#3" class="small" style="color:var(--xb);font-weight:700" data-en="Open">Ouvrir</a></td></tr>
+          <tr><td><div class="co"><span class="co-logo" style="background:#C2417B;width:26px;height:26px;font-size:12px;border-radius:8px">L</span><b>Lisanga Santé</b></div></td><td>9 / 21</td><td class="n">71</td><td><span class="pill p-green">100 %</span></td><td style="color:var(--green)">+6 %</td><td><span class="pill p-amber" data-en="2.1 mo.">2,1 mois</span></td><td><span class="pill p-amber" data-en="Level 1">Niveau 1</span></td><td><a href="#3" class="small" style="color:var(--xb);font-weight:700" data-en="Open">Ouvrir</a></td></tr>
+          <tr><td><div class="co"><span class="co-logo" style="background:#E08A12;width:26px;height:26px;font-size:12px;border-radius:8px">M</span><b>Mwinda Solar</b></div></td><td>11 / 21</td><td class="n">74</td><td><span class="pill p-green">100 %</span></td><td style="color:var(--green)">+9 %</td><td><span class="pill p-green" data-en="3.0 mo.">3,0 mois</span></td><td><span class="pill p-green" data-en="Level 0">Niveau 0</span></td><td><a href="#3" class="small" style="color:var(--xb);font-weight:700" data-en="Open">Ouvrir</a></td></tr>
+          <tr><td><div class="co"><span class="co-logo" style="background:#0E8C8C;width:26px;height:26px;font-size:12px;border-radius:8px">B</span><b>Buku Academy</b></div></td><td>6 / 21</td><td class="n">—</td><td><span class="pill p-grey" data-en="Frozen (pause)">Gelée (pause)</span></td><td class="muted">—</td><td class="muted">—</td><td><span class="pill p-grey" data-en="Maternity pause">Pause maternité</span></td><td><a href="#3" class="small" style="color:var(--xb);font-weight:700" data-en="Open">Ouvrir</a></td></tr>
+        </table>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="card" style="flex:1;min-width:0">
+          <span class="ct" data-en="Experts: time used per domain">Experts : temps consommé par domaine</span>
+          <div class="hbar"><span class="t2" data-en="Finance">Finance</span><span class="b"><i style="width:62%;background:var(--xb)"></i></span><span class="v">26 h</span></div>
+          <div class="hbar"><span class="t2" data-en="Sales">Commercial</span><span class="b"><i style="width:48%;background:var(--xb)"></i></span><span class="v">20 h</span></div>
+          <div class="hbar"><span class="t2" data-en="Product">Produit</span><span class="b"><i style="width:38%;background:var(--xb)"></i></span><span class="v">16 h</span></div>
+          <div class="hbar"><span class="t2" data-en="Legal">Juridique</span><span class="b"><i style="width:24%;background:var(--xb)"></i></span><span class="v">10 h</span></div>
+          <div class="hbar"><span class="t2" data-en="Other 3 domains">3 autres domaines</span><span class="b"><i style="width:33%;background:var(--xb)"></i></span><span class="v">14 h</span></div>
+          <div class="small muted" data-en="Monthly plans, timesheets with proof, opinions on deliverables">Plans mensuels, feuilles de temps avec justificatifs, avis sur les livrables</div>
+        </div>
+        <div class="card" style="flex:1;min-width:0">
+          <span class="ct" data-en="All programmes on the instance">Tous les programmes de l'instance</span>
+          <div class="dlist" style="margin-top:6px">
+            <div><span class="dotc" style="background:var(--xb)"></span><span style="flex:1" data-en="Incubation · cohort 3 · 24 companies">Incubation · cohorte 3 · 24 entreprises</span><span class="pill p-blue" data-en="In progress">En cours</span></div>
+            <div><span class="dotc" style="background:var(--gold)"></span><span style="flex:1" data-en="Venture Builder · cohort 1 · 5 companies">Venture Builder · cohorte 1 · 5 entreprises</span><span class="pill p-blue" data-en="In progress">En cours</span></div>
+            <div><span class="dotc" style="background:#C2417B"></span><span style="flex:1" data-en="Venture Builder · cohort 2 · call open">Venture Builder · cohorte 2 · appel ouvert</span><span class="pill p-gold" data-en="63 applications">63 candidatures</span></div>
+          </div>
+          <div class="small muted" style="margin-top:10px" data-en="A new programme is set up by the team, without development.">Un nouveau programme se paramètre par l'équipe, sans développement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. REPORTING BAILLEUR ================= -->
+<section class="screen" id="s9">
+  <div class="s-head">
+    <div>
+      <h2><span class="s-num">9</span><span data-en="Donor reports: the logframe, without re-entry">Reporting bailleur : le cadre logique, sans ressaisie</span></h2>
+      <p data-en="The indicators of the action's logframe are fed by what the companies enter and prove every month. Each figure can be opened down to its proof. Export in one click, and full export of the data at any time.">Les indicateurs du cadre logique de l'action sont nourris par ce que les entreprises saisissent et prouvent chaque mois. Chaque chiffre s'ouvre jusqu'à sa preuve. Export en un clic, et export complet des données à tout moment.</p>
+    </div>
+    <div class="tags"><span class="tag">R10 · R11 · R14</span><span class="tag" data-en="Eliminatory requirement">Exigence éliminatoire</span></div>
+  </div>
+  <div class="app">
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#8"><i data-lucide="file-bar-chart" class="i i-s"></i>Silikin Village</a><a class="on" href="#9"><i data-lucide="landmark" class="i i-s"></i><span data-en="Donor">Bailleur</span></a></div><span class="sp"></span><span class="eu small muted"><span class="flag"></span><span data-en="Funded by the European Union">Financé par l'Union européenne</span></span><div class="who"><span class="av" style="background:var(--xb-d)">NK</span></div></div>
+    <div class="main">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+        <div><div class="crumb" data-en="Contract NDICI AFRICA 2025/485-332 · action “Incubation programme with Venture Building path”">Contrat NDICI AFRICA 2025/485-332 · action « Programme d'incubation avec Parcours Venture Building »</div><h3 data-en="Logframe indicators · at 31 Jan. 2027">Indicateurs du cadre logique · au 31 janv. 2027</h3></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-o" data-toast="Export complet des données (CSV, XLSX, JSON) prêt" data-toast-en="Full data export (CSV, XLSX, JSON) ready"><i data-lucide="database" class="i i-s"></i><span data-en="Full export">Export complet</span></button><button class="btn btn-p" data-toast="Rapport au bailleur généré (XLSX et PDF), avec la mention de financement UE" data-toast-en="Donor report generated (XLSX and PDF), with the EU funding mention"><i data-lucide="file-down" class="i i-s"></i><span data-en="Donor report">Rapport au bailleur</span></button></div>
+      </div>
+      <div class="card tbl" style="margin-top:14px;padding:6px 6px 0">
+        <table class="g">
+          <tr><th data-en="Indicator">Indicateur</th><th data-en="Target 2028">Cible 2028</th><th data-en="Achieved">Réalisé</th><th style="width:22%" data-en="Progress">Avancement</th><th data-en="Source in the platform">Source dans la plateforme</th><th></th></tr>
+          <tr><td data-en="Women beneficiaries trained and supported">Bénéficiaires formées et accompagnées</td><td class="n">15</td><td class="n">5</td><td><div class="prog"><i style="width:33%"></i></div></td><td class="small muted" data-en="Cohorts, attendance">Cohortes, présences</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="5 entreprises, chacune avec ses présences" data-toast-en="5 companies, each with its attendance" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Satisfaction of beneficiaries">Satisfaction des bénéficiaires</td><td class="n">≥ 4 / 5</td><td class="n">4,6</td><td><div class="prog"><i style="width:92%"></i></div></td><td class="small muted" data-en="Monthly survey">Enquête mensuelle</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="12 réponses, détail par session" data-toast-en="12 answers, detail per session" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Prototypes and products developed">Prototypes et produits développés</td><td class="n">12</td><td class="n">3</td><td><div class="prog"><i style="width:25%"></i></div></td><td class="small muted" data-en="Validated deliverables P2">Livrables P2 validés</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="3 livrables validés, avec leurs preuves" data-toast-en="3 validated deliverables, with their proof" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Support sessions per SME (average)">Sessions d'accompagnement par PME (moyenne)</td><td class="n">24</td><td class="n">11</td><td><div class="prog"><i style="width:46%"></i></div></td><td class="small muted" data-en="Expert timesheets">Feuilles de temps des experts</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="55 sessions, justificatifs joints" data-toast-en="55 sessions, proof attached" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Jobs created">Emplois créés</td><td class="n">30</td><td class="n">7</td><td><div class="prog"><i style="width:23%"></i></div></td><td class="small muted" data-en="Monthly figures + contracts">Chiffres mensuels + contrats</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="7 contrats déposés" data-toast-en="7 contracts uploaded" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Turnover of the companies (cumulative)">Chiffre d'affaires des entreprises (cumul)</td><td class="n">+50 %</td><td class="n">+14 %</td><td><div class="prog"><i style="width:28%"></i></div></td><td class="small muted" data-en="Monthly figures + statements">Chiffres mensuels + relevés</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="Relevés mobile money et cahiers, mois par mois" data-toast-en="Mobile money statements and notebooks, month by month" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Additional funds raised">Fonds additionnels mobilisés</td><td class="n">150 000 $</td><td class="n">45 000 $</td><td><div class="prog g"><i style="width:30%"></i></div></td><td class="small muted" data-en="Signed agreements">Conventions signées</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="2 conventions signées" data-toast-en="2 signed agreements" data-en="Proof">Preuves</button></td></tr>
+          <tr><td data-en="Introductions to financial institutions">Mises en relation avec des institutions financières</td><td class="n">30</td><td class="n">6</td><td><div class="prog"><i style="width:20%"></i></div></td><td class="small muted" data-en="Meeting log">Journal des rencontres</td><td><button class="btn btn-o" style="padding:5px 10px;font-size:12px" data-toast="6 rencontres, comptes rendus joints" data-toast-en="6 meetings, minutes attached" data-en="Proof">Preuves</button></td></tr>
+        </table>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="card" style="flex:1;min-width:0;display:flex;gap:12px;align-items:center"><i data-lucide="server" class="i" style="color:var(--xb)"></i><div class="small"><b data-en="Data owned by TEXAF Digital">Données propriété de TEXAF Digital</b><br><span class="muted" data-en="Dedicated instance · copy in Kinshasa every week · full export at any time">Instance dédiée · copie à Kinshasa chaque semaine · export complet à tout moment</span></div></div>
+        <div class="card" style="flex:1;min-width:0;display:flex;gap:12px;align-items:center"><i data-lucide="calculator" class="i" style="color:var(--xb)"></i><div class="small"><b data-en="Total cost until 2028, justifiable">Coût total jusqu'en 2028, justifiable</b><br><span class="muted" data-en="Perpetual licence, optional maintenance, AI usage per month">Licence perpétuelle, maintenance facultative, usage IA par mois</span></div></div>
+        <div class="card" style="flex:1;min-width:0;display:flex;gap:12px;align-items:center"><span class="flag"></span><div class="small"><b data-en="EU visibility">Visibilité UE</b><br><span class="muted" data-en="Every export carries the funding mention">Chaque export porte la mention de financement</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10. CONFIANCE ================= -->
+<section class="screen" id="s10">
+  <div class="s-head">
+    <div>
+      <h2><span class="s-num">10</span><span data-en="AI under control: log, consent, instructions, quality">L'IA sous contrôle : journal, consentement, instructions, qualité</span></h2>
       <p data-en="Every AI output is logged and linked to the human decision. No agent reads a beneficiary's documents without her separate consent. The instructions belong to TEXAF Digital and can be edited. Each agent is tested before going live.">Chaque sortie d'IA est journalisée et reliée à la décision humaine. Aucun agent ne lit les pièces d'une bénéficiaire sans son consentement distinct. Les instructions appartiennent à TEXAF Digital et se modifient. Chaque agent est testé avant la mise en service.</p>
     </div>
     <div class="tags"><span class="tag">R8 · R9 · R11 · B4</span><span class="tag" data-en="Criterion 2 · 20 points">Critère 2 · 20 points</span></div>
   </div>
   <div class="app">
-    <div class="app-top"><img src="logo-silikin.svg" alt=""><span class="prog">Xelle · Venture Builder</span><span class="sp"></span><div class="who"><span data-en="Administrator">Administrateur</span><span class="av" style="background:#FFE80A;color:#1A1B1E">AD</span></div></div>
-    <div class="app-body">
-      <aside class="side">
-        <a href="#1"><i data-lucide="plane" class="i"></i><span data-en="Journey">Parcours</span></a>
-        <a href="#5"><i data-lucide="layout-dashboard" class="i"></i><span data-en="Dashboard">Tableau de bord</span></a>
-        <a class="on" href="#6"><i data-lucide="shield-check" class="i"></i><span data-en="AI and trust">IA et confiance</span></a>
-        <div class="grp">Administration</div>
-        <a href="#6"><i data-lucide="sliders-horizontal" class="i"></i><span data-en="Programme settings">Paramètres du programme</span></a>
-        <a href="#6"><i data-lucide="users" class="i"></i><span data-en="Roles and rights">Rôles et droits</span></a>
-      </aside>
-      <div class="main">
-        <h3 data-en="AI and trust">IA et confiance</h3>
-        <p class="sub" data-en="Hosting: Kinshasa copy every week · models called with TEXAF Digital's API account · no training on the data">Hébergement : copie à Kinshasa chaque semaine · modèles appelés avec le compte d'API de TEXAF Digital · aucun entraînement sur les données</p>
-        <div class="card tbl" style="margin-top:14px;padding:6px 6px 0">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px"><b class="exo" data-en="Log of AI outputs">Journal des sorties d'IA</b><button class="btn btn-o" style="padding:7px 12px;font-size:13px" data-toast="Journal exporté (CSV, 1 248 lignes)" data-toast-en="Log exported (CSV, 1,248 rows)"><i data-lucide="download" class="i i-s"></i><span data-en="Export">Exporter</span></button></div>
-          <table class="g">
-            <tr><th data-en="Date">Date</th><th>Agent</th><th data-en="Task">Tâche</th><th data-en="Proposal">Proposition</th><th data-en="Human decision">Décision humaine</th><th data-en="By">Par</th></tr>
-            <tr><td>03/02 08:10</td><td><span class="ai" data-en="Team module">Module équipe</span></td><td>Mboka Farm · M2</td><td data-en="Cash alert, 1.3 months">Alerte trésorerie, 1,3 mois</td><td><span class="pill p-green" data-en="Validated">Validée</span></td><td>N. Kabongo · 08:42</td></tr>
-            <tr><td>22/01 16:05</td><td><span class="ai" data-en="Team module">Module équipe</span></td><td data-en="Milestone 1 · check">Jalon 1 · vérification</td><td data-en="Blocking criterion at risk">Critère bloquant à risque</td><td><span class="pill p-green" data-en="Validated">Validée</span></td><td>P. Lukusa · 17:30</td></tr>
-            <tr><td>09/12 09:54</td><td><span class="ai" data-en="Proof checker">Vérificateur</span></td><td>P1.01</td><td data-en="Criterion 4 missing">Critère 4 absent</td><td><span class="pill p-amber" data-en="Edited">Modifiée</span></td><td>N. Amisi · 10/12</td></tr>
-            <tr><td>09/12 09:54</td><td><span class="ai" data-en="Proof checker">Vérificateur</span></td><td>P1.01</td><td data-en="Criterion 2: gap 280 $">Critère 2 : écart 280 $</td><td><span class="pill p-green" data-en="Validated">Validée</span></td><td>N. Amisi · 10/12</td></tr>
-            <tr><td>04/12 11:20</td><td><span class="ai" data-en="Diagnostic">Diagnostic</span></td><td>Buku Academy</td><td data-en="Diagnostic summary">Synthèse du diagnostic</td><td><span class="pill p-red" data-en="Dismissed">Écartée</span></td><td>N. Amisi · 05/12</td></tr>
-          </table>
-        </div>
-        <div class="row" style="margin-top:14px">
-          <div class="card" style="width:300px;flex-shrink:0">
-            <b class="exo" data-en="AI consent">Consentement IA</b>
-            <div class="small muted" style="margin:2px 0 10px" data-en="Separate from the programme consent">Distinct du consentement au programme</div>
-            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>Mboka Farm<br><span class="small muted" data-en="given 2 Dec.">donné le 2 déc.</span></span><button class="sw" aria-label="Consentement" data-toast="Seule la bénéficiaire peut retirer son consentement" data-toast-en="Only the beneficiary can withdraw her consent"></button></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>Kitoko Pay<br><span class="small muted" data-en="given 2 Dec.">donné le 2 déc.</span></span><button class="sw" aria-label="Consentement" data-toast="Seule la bénéficiaire peut retirer son consentement" data-toast-en="Only the beneficiary can withdraw her consent"></button></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>Buku Academy<br><span class="small" style="color:var(--amber)" data-en="refused: no agent reads her documents">refusé : aucun agent ne lit ses pièces</span></span><button class="sw off" aria-label="Consentement" data-toast="Revue sans IA pour Buku Academy : la personne de référence lit seule" data-toast-en="Review without AI for Buku Academy: the reviewer reads alone"></button></div>
-            </div>
+    <div class="bar"><img class="x" src="logo-xelle.png" alt="xELLE"><div class="tabs"><a href="#1"><i data-lucide="plane" class="i i-s"></i><span data-en="Journey">Parcours</span></a><a href="#7"><i data-lucide="layout-dashboard" class="i i-s"></i><span data-en="Dashboard">Tableau de bord</span></a><a class="on" href="#10"><i data-lucide="shield-check" class="i i-s"></i><span data-en="AI and trust">IA et confiance</span></a><a href="#10" data-toast="Paramètres du programme : phases, tâches, fenêtres, formulaires, rôles" data-toast-en="Programme settings: phases, tasks, windows, forms, roles"><i data-lucide="sliders-horizontal" class="i i-s"></i><span data-en="Settings">Paramètres</span></a></div><span class="sp"></span><div class="who"><span data-en="Administrator">Administrateur</span><span class="av" style="background:var(--gold);color:var(--ink)">AD</span></div></div>
+    <div class="main">
+      <h3 data-en="AI and trust">IA et confiance</h3>
+      <p class="sub" data-en="Hosting: Kinshasa copy every week · models called with TEXAF Digital's API account · no training on the data">Hébergement : copie à Kinshasa chaque semaine · modèles appelés avec le compte d'API de TEXAF Digital · aucun entraînement sur les données</p>
+      <div class="card tbl" style="margin-top:14px;padding:6px 6px 0">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px"><span class="ct" data-en="Log of AI outputs">Journal des sorties d'IA</span><button class="btn btn-o" style="padding:7px 12px;font-size:13px" data-toast="Journal exporté (CSV, 1 248 lignes)" data-toast-en="Log exported (CSV, 1,248 rows)"><i data-lucide="download" class="i i-s"></i><span data-en="Export">Exporter</span></button></div>
+        <table class="g">
+          <tr><th data-en="Date">Date</th><th>Agent</th><th data-en="Task">Tâche</th><th data-en="Proposal">Proposition</th><th data-en="Human decision">Décision humaine</th><th data-en="By">Par</th></tr>
+          <tr><td>03/02 08:10</td><td><span class="ai" data-en="Team module">Module équipe</span></td><td>Mboka Farm · M2</td><td data-en="Cash alert, 1.3 months">Alerte trésorerie, 1,3 mois</td><td><span class="pill p-green" data-en="Validated">Validée</span></td><td>N. Kabongo · 08:42</td></tr>
+          <tr><td>22/01 16:05</td><td><span class="ai" data-en="Team module">Module équipe</span></td><td data-en="Milestone 1 · check">Jalon 1 · vérification</td><td data-en="Blocking criterion at risk">Critère bloquant à risque</td><td><span class="pill p-green" data-en="Validated">Validée</span></td><td>P. Lukusa · 17:30</td></tr>
+          <tr><td>09/12 09:54</td><td><span class="ai" data-en="Proof checker">Vérificateur</span></td><td>P1.01</td><td data-en="Criterion 4 missing">Critère 4 absent</td><td><span class="pill p-amber" data-en="Edited">Modifiée</span></td><td>N. Amisi · 10/12</td></tr>
+          <tr><td>04/12 11:20</td><td><span class="ai" data-en="Diagnostic">Diagnostic</span></td><td>Buku Academy</td><td data-en="Diagnostic summary">Synthèse du diagnostic</td><td><span class="pill p-red" data-en="Dismissed">Écartée</span></td><td>N. Amisi · 05/12</td></tr>
+          <tr><td>16/11 10:02</td><td><span class="ai" data-en="Team module">Module équipe</span></td><td data-en="Selection · Mboka Farm">Sélection · Mboka Farm</td><td data-en="Summary sheet">Fiche de synthèse</td><td><span class="pill p-green" data-en="Read by the jury">Lue par le jury</span></td><td>J. Bokolo · 17/11</td></tr>
+        </table>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div class="card w300" style="width:300px;flex-shrink:0">
+          <span class="ct" data-en="AI consent">Consentement IA</span>
+          <div class="small muted" style="margin:2px 0 10px" data-en="Separate from the programme consent">Distinct du consentement au programme</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="co"><svg width="24" height="24"><use href="#mboka"/></svg><span>Mboka Farm<br><span class="small muted" data-en="given 2 Dec.">donné le 2 déc.</span></span></span><button class="sw" aria-label="Consentement" data-toast="Seule la bénéficiaire peut retirer son consentement" data-toast-en="Only the beneficiary can withdraw her consent"></button></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="co"><span class="co-logo" style="background:#1F4FA0;width:24px;height:24px;font-size:11px;border-radius:7px">K</span><span>Kitoko Pay<br><span class="small muted" data-en="given 2 Dec.">donné le 2 déc.</span></span></span><button class="sw" aria-label="Consentement" data-toast="Seule la bénéficiaire peut retirer son consentement" data-toast-en="Only the beneficiary can withdraw her consent"></button></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="co"><span class="co-logo" style="background:#0E8C8C;width:24px;height:24px;font-size:11px;border-radius:7px">B</span><span>Buku Academy<br><span class="small" style="color:var(--amber)" data-en="refused: no agent reads her documents">refusé : aucun agent ne lit ses pièces</span></span></span><button class="sw off" aria-label="Consentement" data-toast="Revue sans IA pour Buku Academy : la personne de référence lit seule" data-toast-en="Review without AI for Buku Academy: the reviewer reads alone"></button></div>
           </div>
-          <div class="card" style="flex:1;min-width:0">
-            <div style="display:flex;justify-content:space-between;align-items:center"><b class="exo" data-en="Proof checker's instructions">Instructions du vérificateur de preuves</b><span class="small muted" data-en="v3 · edited by P. Lukusa on 20 Jan.">v3 · modifiée par P. Lukusa le 20 janv.</span></div>
-            <div class="prompt" style="margin-top:10px">Pour chaque critère de la tâche, cherche une preuve dans les pièces déposées.
+        </div>
+        <div class="card" style="flex:1;min-width:0">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px"><span class="ct" data-en="Proof checker's instructions">Instructions du vérificateur de preuves</span><span class="small muted" data-en="v3 · edited by P. Lukusa on 20 Jan.">v3 · modifiée par P. Lukusa le 20 janv.</span></div>
+          <div class="prompt" style="margin-top:10px">Pour chaque critère de la tâche, cherche une preuve dans les pièces déposées.
 Cite le passage exact (pièce, page, ligne). Si rien ne l'appuie, écris « absente ».
 N'invente aucun chiffre. Accepte les preuves peu formalisées : <em>cahier de ventes</em>,
 <em>relevé mobile money</em>, photos. Écart toléré entre cahier et relevé : <em>10 %</em>.
 Réponds dans la langue de l'entrepreneure, en phrases simples.
 Tu proposes un verdict ; la personne de référence décide.</div>
-            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-o" style="font-size:13px;padding:8px 12px" data-toast="Modification enregistrée en v4 : le test de qualité se relance sur les 20 cas" data-toast-en="Change saved as v4: the quality test runs again on the 20 cases"><i data-lucide="pencil" class="i i-s"></i><span data-en="Edit">Modifier</span></button><button class="btn btn-o" style="font-size:13px;padding:8px 12px" data-toast="Versions v1 à v3, chacune avec son rapport de qualité" data-toast-en="Versions v1 to v3, each with its quality report"><i data-lucide="history" class="i i-s"></i><span data-en="Versions">Versions</span></button></div>
-          </div>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-o" style="font-size:13px;padding:8px 12px" data-toast="Modification enregistrée en v4 : le test de qualité se relance sur les 20 cas" data-toast-en="Change saved as v4: the quality test runs again on the 20 cases"><i data-lucide="pencil" class="i i-s"></i><span data-en="Edit">Modifier</span></button><button class="btn btn-o" style="font-size:13px;padding:8px 12px" data-toast="Versions v1 à v3, chacune avec son rapport de qualité" data-toast-en="Versions v1 to v3, each with its quality report"><i data-lucide="history" class="i i-s"></i><span data-en="Versions">Versions</span></button></div>
         </div>
-        <div class="card" style="margin-top:14px">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><b class="exo" data-en="Quality test before going live · 20 cases from the team">Test de qualité avant mise en service · 20 cas de l'équipe</b><span class="small muted" data-en="Required agreement with the human review: 80 %">Accord exigé avec la revue humaine : 80 %</span></div>
-          <div class="hbar"><span class="t" data-en="Proof checker">Vérificateur de preuves</span><span class="b"><i style="width:90%"></i><s></s></span><span class="v">18 / 20</span></div>
-          <div class="hbar"><span class="t" data-en="Diagnostic assistant">Assistant du diagnostic</span><span class="b"><i style="width:85%"></i><s></s></span><span class="v">17 / 20</span></div>
-          <div class="hbar"><span class="t" data-en="Team module">Module équipe</span><span class="b"><i style="width:85%"></i><s></s></span><span class="v">17 / 20</span></div>
-          <div class="small muted" data-en="Report updated at every change of model or instructions · the 20 cases stay as a non-regression test">Rapport mis à jour à chaque changement de modèle ou d'instructions · les 20 cas restent un test de non-régression</div>
-        </div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span class="ct" data-en="Quality test before going live · 20 cases from the team">Test de qualité avant mise en service · 20 cas de l'équipe</span><span class="small muted" data-en="Required agreement with the human review: 80 %">Accord exigé avec la revue humaine : 80 %</span></div>
+        <div class="hbar"><span class="t2" data-en="Proof checker">Vérificateur de preuves</span><span class="b"><i style="width:90%"></i><s></s></span><span class="v">18 / 20</span></div>
+        <div class="hbar"><span class="t2" data-en="Diagnostic assistant">Assistant du diagnostic</span><span class="b"><i style="width:85%"></i><s></s></span><span class="v">17 / 20</span></div>
+        <div class="hbar"><span class="t2" data-en="Team module">Module équipe</span><span class="b"><i style="width:85%"></i><s></s></span><span class="v">17 / 20</span></div>
+        <div class="small muted" data-en="Report updated at every change of model or instructions · the 20 cases stay as a non-regression test">Rapport mis à jour à chaque changement de modèle ou d'instructions · les 20 cas restent un test de non-régression</div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="foot"><img src="logo-xelle.png" alt="xELLE" style="height:20px"><span data-en="Multiply your impact">Multiplie ton impact</span><span>·</span><span data-en="run by">opéré par</span><span class="svb"><img src="logo-silikin.svg" alt="Silikin Village"></span><span>·</span><span class="eu"><span class="flag"></span><span data-en="Funded by the European Union">Financé par l'Union européenne</span></span></div>
 
 <div class="modal" id="pv"><div class="box">
   <h4 data-en="Minutes of milestone 1 · Mboka Farm">Procès-verbal du jalon 1 · Mboka Farm</h4>
@@ -765,18 +999,65 @@ Tu proposes un verdict ; la personne de référence décide.</div>
 </div></div>
 <div class="toast" id="toast"><i data-lucide="check-circle-2" class="i" style="color:#5BDDA0"></i><span></span></div>
 
-
 <script>
 (function(){
+  // ---- the route of screen 1, built from data ----
+  var STOPS=[
+    {k:'big',c:'done',ic:'megaphone',fr:'Appel à candidatures',en:'Call for applications',dt:'63',dten:'63',un:{c:'p-blue',fr:'63 dossiers',en:'63 files'}},
+    {k:'leg',done:true,fr:'Présélection',en:'Pre-selection'},
+    {k:'big',c:'done',ic:'award',fr:'Sélection',en:'Selection',dt:'78 / 100',un:{c:'p-gold',fr:'Tranche 1',en:'Tranche 1'}},
+    {k:'leg',done:true,tasks:['P1.01','P1.02','P1.03','P1.04','P1.05','P1.06','P1.07','P1.08'],st:'okkkkkkk',fr:'Phase 1 · 8 tâches',en:'Phase 1 · 8 tasks',detour:true},
+    {k:'big',c:'done',jal:'J1',fr:'Jalon 1',en:'Milestone 1',dt:'63 / 100',un:{c:'p-amber',fr:'Tranche 2 · 50 %',en:'Tranche 2 · 50 %'}},
+    {k:'leg',done:false,partial:true,tasks:['P2.01','P2.02','P2.03','P2.04','P2.05'],st:'kkrff',fr:'Phase 2 · P2.01 à P2.05',en:'Phase 2 · P2.01 to P2.05',plane:2},
+    {k:'big',c:'next',jal:'J2',fr:'Jalon 2 *',en:'Milestone 2 *',dt:'mois 4',dten:'month 4',un:{c:'p-grey',fr:'Tranche 3',en:'Tranche 3'}},
+    {k:'leg',done:false,tasks:['P2.06','P2.07','P2.08','P2.09','P2.10'],st:'fffff',fr:'Phase 2 · P2.06 à P2.10',en:'Phase 2 · P2.06 to P2.10'},
+    {k:'big',c:'next',jal:'J3',fr:'Jalon 3 *',en:'Milestone 3 *',dt:'mois 6',dten:'month 6',un:{c:'p-grey',fr:'Tranche finale',en:'Final tranche'}},
+    {k:'leg',done:false,fr:'',en:''},
+    {k:'big',c:'next',ic:'flag',fr:'Sortie',en:'Exit',dt:'2 juin 2027',dten:'2 June 2027',un:{c:'p-grey',fr:'Dossier final',en:'Final file'}}
+  ];
+  var tr=document.getElementById('track');
+  function esc(s){return s}
+  STOPS.forEach(function(s){
+    var d=document.createElement('div');
+    if(s.k==='big'){
+      d.className='big';
+      var inner=s.jal?'<span>'+s.jal+'</span>':'<i data-lucide="'+s.ic+'" class="i"></i>';
+      d.innerHTML='<div class="bd '+s.c+(s.jal?' jal':'')+'">'+inner+'</div><div class="nm" data-en="'+s.en+'">'+s.fr+'</div>'+
+        (s.dt?'<div class="dt"'+(s.dten?' data-en="'+s.dten+'"':'')+'>'+s.dt+'</div>':'')+
+        '<div class="un"><span class="pill '+s.un.c+'" data-en="'+s.un.en+'">'+s.un.fr+'</span></div>';
+    }else{
+      d.className='leg'+(s.done?'':' fut');if(s.tasks)d.style.flexGrow=Math.max(1,s.tasks.length/2);
+      var hop='<svg class="hop" viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M2,50 Q50,-8 98,50"/><path class="hd" d="M93,40 L98.5,51 L90,48"/></svg>';
+      var t='';
+      if(s.tasks){t='<div class="tasks">'+s.tasks.map(function(x,i){var c=s.st[i]==='o'||s.st[i]==='k'?'ok':s.st[i]==='r'?'rv':'fu';return '<span class="tk '+c+'" title="'+x+'">'+x.split('.')[1]+'</span>'}).join('')+'</div>'}
+      d.innerHTML='<div class="ground"'+(s.partial?' style="border-top:3px dashed #B9C6DA;background:linear-gradient(90deg,var(--xb) 40%,transparent 40%);height:3px;border:0;top:25px"':'')+'></div>'+hop+t+(s.fr?'<div class="lbl" data-en="'+s.en+'">'+s.fr+'</div>':'')+(s.detour?'<div class="detour"><span data-en="Catch-up R.01 to R.03, if needed">Rattrapage R.01 à R.03, si besoin</span></div>':'')+
+        (s.plane?'<div class="plane" style="left:calc(48% - 17px);top:-30px"><i data-lucide="plane"></i></div>':'');
+    }
+    tr.appendChild(d);
+  });
+  var LANES=[
+    {fr:'Candidature',en:'Application',o:[['ok','Dossier et pièces','File and documents'],['ok','Fiche de synthèse IA','AI summary sheet']]},
+    {fr:'Sélection',en:'Selection',o:[['ok','Notes du jury','Jury scores'],['ok','Liste des lauréates','List of laureates']]},
+    {fr:'Phase 1',en:'Phase 1',o:[['ok','Diagnostic P1.01','Diagnostic P1.01'],['ok','Preuves de ventes','Proof of sales'],['ok','P1.02 à P1.08','P1.02 to P1.08']]},
+    {fr:'Jalon 1',en:'Milestone 1',o:[['ok','PV signé','Signed minutes'],['ok','Cibles M3 à M6','Targets M3 to M6']]},
+    {fr:'Phase 2',en:'Phase 2',o:[['ok','P2.01, P2.02','P2.01, P2.02'],['wait','P2.03 en revue','P2.03 under review']]},
+    {fr:'Jalons 2 et 3',en:'Milestones 2 and 3',o:[['wait','Débloqués par la phase 2','Unlocked by phase 2']]},
+    {fr:'Sortie',en:'Exit',o:[['wait','Tous les livrables réunis','All deliverables combined']]}
+  ];
+  var ln=document.getElementById('lanes');
+  LANES.forEach(function(l){var d=document.createElement('div');d.className='lane';
+    d.innerHTML='<h5 data-en="'+l.en+'">'+l.fr+'</h5>'+l.o.map(function(o){return '<div class="out '+o[0]+'"><i data-lucide="'+(o[0]==='ok'?'check-circle-2':'lock')+'" class="i i-xs"></i><span data-en="'+o[2]+'">'+o[1]+'</span></div>'}).join('');
+    ln.appendChild(d)});
+
+  // ---- navigation, language, toasts ----
   var lang='fr';
   function show(n){
-    n=String(n||'1').replace('#','');if(!/^[1-6]$/.test(n))n='1';
+    n=String(n||'1').replace('#','');if(!/^([1-9]|10)$/.test(n))n='1';
     document.querySelectorAll('.screen').forEach(function(s){s.classList.toggle('on',s.id==='s'+n)});
     document.querySelectorAll('#nav a').forEach(function(a){a.classList.toggle('on',a.dataset.s===n)});
     window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',function(){show(location.hash)});
-  // keep the French text once, to switch back
   document.querySelectorAll('[data-en]').forEach(function(el){el.dataset.fr=el.innerHTML});
   function setLang(l){
     lang=l;document.documentElement.lang=l;
